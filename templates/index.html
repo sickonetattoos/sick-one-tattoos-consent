@@ -1531,73 +1531,50 @@ async function handleSubmit() {
     const fullName     = `${firstName} ${lastName}`;
     const fileName     = `SickOneTattoos_Consent_${firstName}_${lastName}_${dateStr}.jpg`;
 
-    // Auto-download the JPEG to their device
-    const dlLink = document.createElement('a');
-    dlLink.href = generatedImageDataURL;
-    dlLink.download = fileName;
-    dlLink.click();
+    // ── POST directly to Render backend ──────────────────
+    progressLabel.textContent = 'Sending to Sick One Tattoos...';
 
-    // Also download ID front if provided
-    if (idFrontDataURL) {
-      setTimeout(() => {
-        const idLink = document.createElement('a');
-        idLink.href = idFrontDataURL;
-        idLink.download = `SickOneTattoos_ID_Front_${firstName}_${lastName}_${dateStr}.jpg`;
-        idLink.click();
-      }, 500);
+    const payload = {
+      clientName:    fullName,
+      clientPhone:   phone,
+      clientEmail:   document.getElementById('f-email').value.trim(),
+      artistName:    artist,
+      procedureDate: procDate,
+      placement:     placement,
+      design:        design,
+      price:         price || 'N/A',
+      jpegDataUrl:       generatedImageDataURL,
+      idFrontDataUrl:    idFrontDataURL || null,
+      idBackDataUrl:     idBackDataURL  || null
+    };
+
+    const response = await fetch('/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.error || 'Server error ' + response.status);
     }
 
-    // Also download ID back if provided
-    if (idBackDataURL) {
-      setTimeout(() => {
-        const idLink2 = document.createElement('a');
-        idLink2.href = idBackDataURL;
-        idLink2.download = `SickOneTattoos_ID_Back_${firstName}_${lastName}_${dateStr}.jpg`;
-        idLink2.click();
-      }, 1000);
-    }
+    progressBar.style.width = '100%';
+    progressLabel.textContent = 'Submitted!';
 
-    // Build email body with all form details
-    const emailSubject = encodeURIComponent(`Tattoo Consent Form — ${fullName} (${dateStr})`);
-    const emailBody = encodeURIComponent(
-`SICK ONE TATTOOS — COMPLETED CONSENT FORM
-==========================================
-Client Name:    ${fullName}
-Phone:          ${phone}
-Date of Birth:  ${dob}
-Artist:         ${artist}
-Procedure Date: ${procDate}
-Placement:      ${placement}
-Design:         ${design}
-Quoted Price:   ${price || 'N/A'}
-Submitted:      ${new Date().toLocaleString()}
-==========================================
-
-The completed consent form image (${fileName}) has been saved to your Photos/Downloads.
-
-PLEASE ATTACH the saved image to this email before sending.
-
-Thank you!`);
-
-    // Store for the modal button
-    window._mailtoURL = `mailto:${STUDIO_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
-
-    // Update modal body with clear instructions
+    // Update modal to show success — no action needed from client
+    document.getElementById('modal-title').textContent = '\u2705 Form Submitted!';
     document.getElementById('modal-body').innerHTML =
-      `Your form image has been <strong style="color:#c8a84b;">saved to your Photos</strong>.<br><br>
-      Tap <strong style="color:#c8a84b;">"Open Email App & Send"</strong> below, then:
-      <ol style="text-align:left;margin:10px 0 0 16px;line-height:2;">
-        <li>Tap the <strong>attach/paperclip icon</strong></li>
-        <li>Find and attach <strong>${fileName}</strong> from your Photos</li>
-        <li>Tap <strong>Send</strong></li>
-      </ol>`;
+      `Your consent form has been <strong style="color:#c8a84b;">sent directly to Sick One Tattoos</strong>.<br><br>
+      You\'re all set! No further action needed.`;
+    document.getElementById('modal-action-btn').style.display = 'none';
 
     setTimeout(() => {
       progressWrap.style.display = 'none';
       btn.disabled = false;
       btn.textContent = 'Submit Consent Form';
       showModal();
-    }, 800);
+    }, 600);
 
   } catch (err) {
     clearInterval(progInterval);
