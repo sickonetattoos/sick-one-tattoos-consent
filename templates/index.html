@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Sick One Tattoos — Tattoo Consent Form</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #0d0d0d;
+    color: #f0f0f0;
+    min-height: 100vh;
+    padding: 0 0 60px 0;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+    border-bottom: 3px solid #c8a84b;
+    padding: 24px 20px 18px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84b;
+    text-shadow: 0 0 20px rgba(200,168,75,0.4);
+  }
+  .header p {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .snhd-badge {
+    display: inline-block;
+    margin-top: 10px;
+    background: #1e3a1e;
+    border: 1px solid #2e6b2e;
+    color: #5cb85c;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    margin: 16px 14px;
+    overflow: hidden;
+  }
+  .section-header {
+    background: #222;
+    border-bottom: 2px solid #c8a84b;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-num {
+    background: #c8a84b;
+    color: #000;
+    font-size: 11px;
+    font-weight: 900;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #e0e0e0;
+  }
+  .section-body {
+    padding: 16px;
+  }
+
+  /* ── FORM FIELDS ── */
+  .field-group {
+    margin-bottom: 14px;
+  }
+  .field-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #c8a84b;
+    margin-bottom: 6px;
+  }
+  .field-group input[type="text"],
+  .field-group input[type="date"],
+  .field-group input[type="tel"],
+  .field-group input[type="email"],
+  .field-group select,
+  .field-group textarea {
+    width: 100%;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #f0f0f0;
+    font-size: 15px;
+    padding: 11px 13px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .field-group input:focus,
+  .field-group select:focus,
+  .field-group textarea:focus {
+    border-color: #c8a84b;
+  }
+  .field-group textarea {
+    resize: vertical;
+    min-height: 70px;
+  }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .field-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* ── RADIO / CHECKBOX ── */
+  .radio-group, .check-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .radio-option, .check-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .radio-option input, .check-option input {
+    accent-color: #c8a84b;
+    width: 16px;
+    height: 16px;
+  }
+  .radio-option:has(input:checked),
+  .check-option:has(input:checked) {
+    border-color: #c8a84b;
+    background: #1f1a0d;
+  }
+
+  /* ── DISCLOSURE TEXT ── */
+  .disclosure-box {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-left: 3px solid #c8a84b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 14px;
+  }
+  .disclosure-box strong {
+    color: #e8c85a;
+  }
+
+  /* ── INITIALS BOX ── */
+  .initials-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 10px;
+  }
+  .initials-label {
+    font-size: 11px;
+    color: #888;
+    flex: 1;
+    line-height: 1.4;
+  }
+  .initials-canvas-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .initials-canvas {
+    background: #fff;
+    border-radius: 4px;
+    cursor: crosshair;
+    touch-action: none;
+    display: block;
+  }
+  .clear-btn-small {
+    background: none;
+    border: 1px solid #444;
+    color: #888;
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .clear-btn-small:hover { border-color: #c8a84b; color: #c8a84b; }
+
+  /* ── SIGNATURE PAD ── */
+  .sig-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  #sig-canvas {
+    background: #fff;
+    border-radius: 8px;
+    cursor: crosshair;
+    touch-action: none;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+  }
+  .sig-controls {
+    display: flex;
+    gap: 10px;
+  }
+  .btn-outline {
+    background: none;
+    border: 1px solid #555;
+    color: #aaa;
+    font-size: 12px;
+    padding: 7px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: #c8a84b; color: #c8a84b; }
+
+  /* ── ID UPLOAD ── */
+  .upload-zone {
+    border: 2px dashed #333;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    position: relative;
+    background: #111;
+  }
+  .upload-zone:hover { border-color: #c8a84b; }
+  .upload-zone input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+  .upload-icon { font-size: 32px; margin-bottom: 8px; }
+  .upload-text { font-size: 13px; color: #888; }
+  .upload-text strong { color: #c8a84b; }
+  .id-preview {
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+  }
+  .id-preview img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #c8a84b;
+  }
+  .id-preview-label {
+    font-size: 10px;
+    color: #5cb85c;
+    text-align: center;
+    margin-top: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── REQUIRED BADGE ── */
+  .req { color: #e05555; margin-left: 2px; }
+
+  /* ── SUBMIT BUTTON ── */
+  .submit-area {
+    padding: 20px 14px;
+    text-align: center;
+  }
+  #submit-btn {
+    background: linear-gradient(135deg, #c8a84b, #a07830);
+    color: #000;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    padding: 18px 40px;
+    width: 100%;
+    max-width: 400px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(200,168,75,0.35);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  #submit-btn:active { transform: scale(0.97); }
+  #submit-btn:disabled {
+    background: #333;
+    color: #666;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  .submit-note {
+    font-size: 11px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* ── PROGRESS BAR ── */
+  #progress-wrap {
+    display: none;
+    padding: 0 14px;
+    margin-bottom: 10px;
+  }
+  #progress-bar-outer {
+    background: #222;
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+  }
+  #progress-bar-inner {
+    background: linear-gradient(90deg, #c8a84b, #e8c85a);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s;
+    border-radius: 10px;
+  }
+  #progress-label {
+    font-size: 11px;
+    color: #888;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  /* ── MODAL ── */
+  #modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  #modal-overlay.active { display: flex; }
+  #modal-box {
+    background: #1a1a1a;
+    border: 2px solid #c8a84b;
+    border-radius: 14px;
+    padding: 24px 20px;
+    max-width: 360px;
+    width: 100%;
+    text-align: center;
+  }
+  #modal-box h2 {
+    color: #c8a84b;
+    font-size: 18px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  #modal-box p {
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  .modal-btn-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  .modal-btn {
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+  }
+  .modal-btn:hover { opacity: 0.85; }
+  .modal-btn-gold { background: #c8a84b; color: #000; }
+  .modal-btn-gray { background: #333; color: #aaa; }
+
+  /* ── HIDDEN RENDER CANVAS ── */
+  #render-area {
+    position: fixed;
+    left: -9999px;
+    top: 0;
+    visibility: hidden;
+  }
+
+  /* ── MINOR SECTION ── */
+  #minor-section { display: none; }
+
+  /* ── VALIDATION ERROR ── */
+  .field-error {
+    font-size: 10px;
+    color: #e05555;
+    margin-top: 4px;
+    display: none;
+  }
+  .field-group.has-error input,
+  .field-group.has-error select,
+  .field-group.has-error textarea {
+    border-color: #e05555;
+  }
+  .field-group.has-error .field-error { display: block; }
+
+  select option { background: #1a1a1a; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════ HEADER -->
+<div class="header">
+  <h1>Sick One Tattoos</h1>
+  <p>Tattoo Consent &amp; Release Form</p>
+  <span class="snhd-badge">✓ SNHD Compliant — Southern Nevada Health District</span>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 1: CLIENT INFO -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div class="section-title">Client Information</div>
+  </div>
+  <div class="section-body">
+    <div class="field-row">
+      <div class="field-group" id="fg-first">
+        <label>First Name <span class="req">*</span></label>
+        <input type="text" id="f-first" placeholder="First" autocomplete="given-name">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group" id="fg-last">
+        <label>Last Name <span class="req">*</span></label>
+        <input type="text" id="f-last" placeholder="Last" autocomplete="family-name">
+        <div class="field-error">Required</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field-group" id="fg-dob">
+        <label>Date of Birth <span class="req">*</span></label>
+        <input type="date" id="f-dob">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group">
+        <label>Age (auto-calculated)</label>
+        <input type="text" id="f-age" placeholder="—" readonly style="color:#c8a84b;">
+      </div>
+    </div>
+    <div class="field-group" id="fg-address">
+      <label>Street Address <span class="req">*</span></label>
+      <input type="text" id="f-address" placeholder="123 Main St" autocomplete="street-address">
+      <div class="field-error">Required</div>
+    </div>
+    <div class="field-row-3">
+      <div class="field-group" id="fg-city">
+        <label>City <span class="req">*</span></label>
+        <input type="text" id="f-city" placeholder="Las Vegas" autocomplete="address-level2">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group">
+        <label>State</label>
+        <input type="text" id="f-state" placeholder="NV" maxlength="2" autocomplete="address-level1">
+      </div>
+      <div class="field-group">
+        <label>ZIP</label>
+        <input type="tel" id="f-zip" placeholder="89101" maxlength="5" autocomplete="postal-code">
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field-group" id="fg-phone">
+        <label>Phone Number <span class="req">*</span></label>
+        <input type="tel" id="f-phone" placeholder="(702) 555-0000" autocomplete="tel">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group">
+        <label>Email (optional)</label>
+        <input type="email" id="f-email" placeholder="you@email.com" autocomplete="email">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 2: ARTIST & PROCEDURE -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div class="section-title">Artist &amp; Procedure Details</div>
+  </div>
+  <div class="section-body">
+    <div class="field-group" id="fg-artist">
+      <label>Tattoo Artist Name <span class="req">*</span></label>
+      <input type="text" id="f-artist" placeholder="Artist performing the tattoo">
+      <div class="field-error">Required</div>
+    </div>
+    <div class="field-row">
+      <div class="field-group" id="fg-date">
+        <label>Date of Procedure <span class="req">*</span></label>
+        <input type="date" id="f-date">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group" id="fg-placement">
+        <label>Placement on Body <span class="req">*</span></label>
+        <input type="text" id="f-placement" placeholder="e.g., Left forearm">
+        <div class="field-error">Required</div>
+      </div>
+    </div>
+    <div class="field-group" id="fg-design">
+      <label>Tattoo Design Description <span class="req">*</span></label>
+      <textarea id="f-design" placeholder="Describe the tattoo design (e.g., black &amp; grey rose with thorns, approx. 4 inches)"></textarea>
+      <div class="field-error">Required</div>
+    </div>
+    <div class="field-group" id="fg-price">
+      <label>Quoted Price</label>
+      <input type="text" id="f-price" placeholder="e.g., $250" style="max-width:200px;">
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 3: ID UPLOAD -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div class="section-title">Government-Issued Photo ID <span class="req">*</span></div>
+  </div>
+  <div class="section-body">
+    <p style="font-size:12px;color:#888;margin-bottom:12px;line-height:1.6;">
+      Per <strong style="color:#c8a84b;">SNHD Regulation §7.1.6–7.1.7</strong>, age must be verified by government-issued photo ID before any procedure. Upload a clear photo of your ID below.
+    </p>
+    <div class="upload-zone" id="id-front-zone">
+      <input type="file" id="id-front-input" accept="image/*" capture="environment">
+      <div class="upload-icon">📷</div>
+      <div class="upload-text"><strong>Tap to Upload Front of ID</strong><br>Driver's License, State ID, or Passport</div>
+    </div>
+    <div class="id-preview" id="id-front-preview">
+      <img id="id-front-img" src="" alt="ID Front">
+      <div class="id-preview-label">✓ Front of ID uploaded</div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="upload-zone" id="id-back-zone">
+        <input type="file" id="id-back-input" accept="image/*" capture="environment">
+        <div class="upload-icon">🪪</div>
+        <div class="upload-text"><strong>Tap to Upload Back of ID</strong> <span style="color:#666;">(optional)</span></div>
+      </div>
+      <div class="id-preview" id="id-back-preview">
+        <img id="id-back-img" src="" alt="ID Back">
+        <div class="id-preview-label">✓ Back of ID uploaded</div>
+      </div>
+    </div>
+    <div class="field-error" id="id-error" style="display:none;margin-top:8px;">Please upload a photo of your government-issued ID.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 4: MINOR (conditional) -->
+<div class="section" id="minor-section">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div class="section-title">Minor — Parental / Guardian Consent</div>
+  </div>
+  <div class="section-body">
+    <div class="disclosure-box">
+      <strong>SNHD §7.1.4:</strong> Tattoo procedures on persons under 18 require written consent and proper identification of a parent or guardian. The parent/guardian must be present during the procedure.
+    </div>
+    <div class="field-row">
+      <div class="field-group">
+        <label>Parent/Guardian Full Name <span class="req">*</span></label>
+        <input type="text" id="f-guardian-name" placeholder="Full legal name">
+      </div>
+      <div class="field-group">
+        <label>Relationship to Minor <span class="req">*</span></label>
+        <input type="text" id="f-guardian-rel" placeholder="e.g., Mother, Father">
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Parent/Guardian Phone <span class="req">*</span></label>
+      <input type="tel" id="f-guardian-phone" placeholder="(702) 555-0000">
+    </div>
+    <div style="margin-top:8px;">
+      <div class="upload-zone">
+        <input type="file" id="guardian-id-input" accept="image/*" capture="environment">
+        <div class="upload-icon">📷</div>
+        <div class="upload-text"><strong>Upload Parent/Guardian Photo ID</strong><br>Required per SNHD §7.1.8</div>
+      </div>
+      <div class="id-preview" id="guardian-id-preview">
+        <img id="guardian-id-img" src="" alt="Guardian ID">
+        <div class="id-preview-label">✓ Guardian ID uploaded</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 4/5: HEALTH ASSESSMENT -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num" id="health-num">4</div>
+    <div class="section-title">Health Assessment</div>
+  </div>
+  <div class="section-body">
+    <p style="font-size:11px;color:#888;margin-bottom:14px;line-height:1.6;">
+      Per <strong style="color:#c8a84b;">SNHD §7.3</strong>, the following questions must be answered honestly before any procedure.
+    </p>
+
+    <!-- Q1 -->
+    <div class="field-group">
+      <label>Are you currently under the influence of alcohol or drugs? <span class="req">*</span></label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-intox" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-intox" value="Yes"> Yes</label>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="field-group">
+      <label>Have you had jaundice or hepatitis within the last 12 months? <span class="req">*</span></label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-hep" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-hep" value="Yes"> Yes</label>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="field-group">
+      <label>Do you have any known skin conditions, rashes, infections, or active breakouts in the tattoo area? <span class="req">*</span></label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-skin" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-skin" value="Yes"> Yes</label>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="field-group">
+      <label>Do you have any of the following? (Check all that apply)</label>
+      <div class="check-group" style="margin-top:8px;">
+        <label class="check-option"><input type="checkbox" name="q-med" value="Diabetes"> Diabetes</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="Blood disorder"> Blood disorder</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="Heart condition"> Heart condition</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="Epilepsy/seizures"> Epilepsy / Seizures</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="Immune disorder"> Immune disorder</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="Keloid scarring"> Keloid scarring</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="Allergies to ink/latex"> Ink / Latex allergy</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="None of the above"> None of the above</label>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="field-group">
+      <label>Are you pregnant or breastfeeding?</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-preg" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-preg" value="Yes"> Yes</label>
+        <label class="radio-option"><input type="radio" name="q-preg" value="N/A"> N/A</label>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="field-group">
+      <label>Are you currently taking blood thinners or any medications that affect healing?</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-meds" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-meds" value="Yes"> Yes</label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Additional health notes (optional)</label>
+      <textarea id="f-health-notes" placeholder="Any other health information you'd like us to know..."></textarea>
+    </div>
+
+    <!-- INITIALS -->
+    <div class="initials-row">
+      <div class="initials-label">I confirm all health information above is truthful and accurate.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-health" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-health')">Clear</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 5/6: DISCLOSURES & INITIALS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num" id="disc-num">5</div>
+    <div class="section-title">Required Disclosures &amp; Initials</div>
+  </div>
+  <div class="section-body">
+
+    <!-- Disclosure A -->
+    <div class="disclosure-box">
+      <strong>A — Permanence of Tattoo (SNHD §7.2):</strong> I understand that a tattoo is considered <strong>permanent</strong>. Removal requires a surgical or laser procedure and may result in <strong>permanent scarring and disfigurement</strong>. I have been fully advised of this fact.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure A.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-a" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-a')">Clear</button>
+      </div>
+    </div>
+
+    <!-- Disclosure B -->
+    <div class="disclosure-box" style="margin-top:14px;">
+      <strong>B — Sobriety Confirmation (SNHD §7.3.1):</strong> I confirm that I am <strong>not under the influence</strong> of alcohol, drugs, or any intoxicating substances at the time of this procedure. I understand the artist may refuse service if they reasonably suspect otherwise.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure B.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-b" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-b')">Clear</button>
+      </div>
+    </div>
+
+    <!-- Disclosure C -->
+    <div class="disclosure-box" style="margin-top:14px;">
+      <strong>C — Aftercare Responsibility (SNHD §8.5):</strong> I acknowledge that I have received or will receive both <strong>verbal and written aftercare instructions</strong>. I accept full responsibility for following these instructions. Sick One Tattoos is not liable for complications arising from failure to follow aftercare guidance.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure C.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-c" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-c')">Clear</button>
+      </div>
+    </div>
+
+    <!-- Disclosure D -->
+    <div class="disclosure-box" style="margin-top:14px;">
+      <strong>D — Infection Reporting (SNHD §8.6):</strong> I understand that any infection resulting from this procedure must be <strong>immediately reported</strong> to Sick One Tattoos and may be reported to the Southern Nevada Health District. I agree to notify the studio if I experience any signs of infection.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure D.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-d" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-d')">Clear</button>
+      </div>
+    </div>
+
+    <!-- Disclosure E -->
+    <div class="disclosure-box" style="margin-top:14px;">
+      <strong>E — Studio Rules (SNHD §7.4):</strong> I agree that <strong>no food, beverages (except sealed water), or smoking</strong> are permitted in the tattoo area during the procedure. I agree to conduct myself in a calm and respectful manner. The artist reserves the right to refuse or stop service at any time.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure E.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-e" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-e')">Clear</button>
+      </div>
+    </div>
+
+    <!-- Disclosure F -->
+    <div class="disclosure-box" style="margin-top:14px;">
+      <strong>F — Record Keeping (SNHD §7.5):</strong> I consent to Sick One Tattoos retaining a permanent record of this procedure, including my name, age, address, date of procedure, artist name, placement, and design description, as required by the Southern Nevada Health District. Records are maintained for a minimum of two (2) years.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure F.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-f" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-f')">Clear</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 6/7: FULL CONSENT & SIGNATURE -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num" id="consent-num">6</div>
+    <div class="section-title">Full Consent &amp; Signature</div>
+  </div>
+  <div class="section-body">
+    <div class="disclosure-box">
+      By signing below, I, the undersigned, hereby voluntarily consent to receive a tattoo from Sick One Tattoos. I affirm that:
+      <br><br>
+      (1) I am <strong>18 years of age or older</strong> (or have obtained parental/guardian consent as required by SNHD §7.1.4);
+      <br>(2) All information provided on this form is <strong>truthful and accurate</strong>;
+      <br>(3) I have read, understood, and initialed all disclosures above;
+      <br>(4) I release Sick One Tattoos and its artists from liability for any complications arising from pre-existing medical conditions I failed to disclose;
+      <br>(5) This consent form was completed <strong>voluntarily and without coercion</strong>.
+      <br><br>
+      This facility is permitted by the <strong>Southern Nevada Health District (SNHD)</strong>. SNHD can be reached at <strong>(702) 759-0677</strong> or <a href="mailto:bodyart@snhd.org" style="color:#c8a84b;">bodyart@snhd.org</a>.
+    </div>
+
+    <div class="field-row" style="margin-top:14px;">
+      <div class="field-group" id="fg-sig-name">
+        <label>Print Full Name <span class="req">*</span></label>
+        <input type="text" id="f-sig-name" placeholder="Full legal name">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group" id="fg-sig-date">
+        <label>Date Signed <span class="req">*</span></label>
+        <input type="date" id="f-sig-date">
+        <div class="field-error">Required</div>
+      </div>
+    </div>
+
+    <div class="field-group" style="margin-top:8px;">
+      <label>Signature <span class="req">*</span></label>
+      <div class="sig-wrap">
+        <canvas id="sig-canvas" height="130"></canvas>
+        <div class="sig-controls">
+          <button class="btn-outline" onclick="clearCanvas('sig-canvas')">Clear Signature</button>
+        </div>
+      </div>
+      <div class="field-error" id="sig-error" style="display:none;">Please sign above.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SUBMIT -->
+<div id="progress-wrap">
+  <div id="progress-bar-outer"><div id="progress-bar-inner"></div></div>
+  <div id="progress-label">Generating your form image...</div>
+</div>
+<div class="submit-area">
+  <button id="submit-btn" onclick="handleSubmit()">Submit Consent Form</button>
+  <div class="submit-note">
+    Tapping Submit saves your completed form image and opens your email app to send it to Sick One Tattoos.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ MODAL -->
+<div id="modal-overlay">
+  <div id="modal-box">
+    <h2 id="modal-title">📎 Almost Done!</h2>
+    <p id="modal-body" style="font-size:13px;line-height:1.7;color:#ccc;"></p>
+    <div class="modal-btn-row" style="flex-direction:column;gap:12px;">
+      <button class="modal-btn modal-btn-gold" id="modal-email-btn" onclick="openEmail()">📧 Open Email App &amp; Send</button>
+      <button class="modal-btn modal-btn-gray" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ HIDDEN RENDER AREA -->
+<div id="render-area"></div>
+
+<!-- ══════════════════════════════════════════════ SCRIPTS -->
+<!-- html2canvas from CDN (inlined via fetch at runtime for offline use) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+/* ═══════════════════════════════════════════════════════
+   GLOBALS
+═══════════════════════════════════════════════════════ */
+const STUDIO_EMAIL = 'laser.tattoo.solutions@gmail.com';
+let generatedImageDataURL = null;
+let idFrontDataURL = null;
+let idBackDataURL = null;
+let guardianIdDataURL = null;
+
+/* ═══════════════════════════════════════════════════════
+   AUTO-FILL TODAY'S DATE
+═══════════════════════════════════════════════════════ */
+window.addEventListener('DOMContentLoaded', () => {
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('f-date').value = today;
+  document.getElementById('f-sig-date').value = today;
+
+  // Init all canvases
+  initCanvas('sig-canvas', true);
+  ['init-health','init-a','init-b','init-c','init-d','init-e','init-f'].forEach(id => initCanvas(id, false));
+
+  // Age auto-calc
+  document.getElementById('f-dob').addEventListener('change', calcAge);
+
+  // Minor section toggle
+  document.getElementById('f-dob').addEventListener('change', checkMinor);
+  updateSectionNums(false);
+
+  // ID uploads
+  setupUpload('id-front-input', 'id-front-img', 'id-front-preview', (d) => { idFrontDataURL = d; });
+  setupUpload('id-back-input', 'id-back-img', 'id-back-preview', (d) => { idBackDataURL = d; });
+  setupUpload('guardian-id-input', 'guardian-id-img', 'guardian-id-preview', (d) => { guardianIdDataURL = d; });
+});
+
+/* ═══════════════════════════════════════════════════════
+   AGE CALCULATION
+═══════════════════════════════════════════════════════ */
+function calcAge() {
+  const dob = document.getElementById('f-dob').value;
+  if (!dob) return;
+  const today = new Date();
+  const birth = new Date(dob);
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+  document.getElementById('f-age').value = age + ' years old';
+  return age;
+}
+
+function checkMinor() {
+  const age = calcAge();
+  const minorSection = document.getElementById('minor-section');
+  const isMinor = age !== undefined && age < 18;
+  minorSection.style.display = isMinor ? 'block' : 'none';
+  updateSectionNums(isMinor);
+}
+
+function updateSectionNums(hasMinor) {
+  const base = hasMinor ? 1 : 0;
+  const healthEl = document.getElementById('health-num');
+  const discEl = document.getElementById('disc-num');
+  const consentEl = document.getElementById('consent-num');
+  if (healthEl) healthEl.textContent = String(4 + base);
+  if (discEl) discEl.textContent = String(5 + base);
+  if (consentEl) consentEl.textContent = String(6 + base);
+}
+
+/* ═══════════════════════════════════════════════════════
+   CANVAS DRAWING (signature & initials)
+═══════════════════════════════════════════════════════ */
+function initCanvas(id, isSignature) {
+  const canvas = document.getElementById(id);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  // Resize to actual CSS width
+  if (isSignature) {
+    const w = canvas.parentElement.offsetWidth || 340;
+    canvas.width = Math.min(w, 500);
+    canvas.height = 130;
+  }
+
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Placeholder text
+  ctx.fillStyle = '#bbb';
+  ctx.font = isSignature ? '13px Arial' : '10px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText(isSignature ? 'Sign here' : 'Initials', canvas.width / 2, canvas.height / 2 + 4);
+
+  let drawing = false;
+  let lastX = 0, lastY = 0;
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    if (e.touches) {
+      return {
+        x: (e.touches[0].clientX - rect.left) * scaleX,
+        y: (e.touches[0].clientY - rect.top) * scaleY
+      };
+    }
+    return {
+      x: (e.clientX - rect.left) * scaleX,
+      y: (e.clientY - rect.top) * scaleY
+    };
+  }
+
+  function startDraw(e) {
+    e.preventDefault();
+    drawing = true;
+    const pos = getPos(e);
+    lastX = pos.x; lastY = pos.y;
+    // Clear placeholder on first draw
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 1, 0, Math.PI * 2);
+    ctx.fillStyle = '#000';
+    ctx.fill();
+  }
+
+  function draw(e) {
+    if (!drawing) return;
+    e.preventDefault();
+    const pos = getPos(e);
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = isSignature ? 2.5 : 2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+    lastX = pos.x; lastY = pos.y;
+  }
+
+  function stopDraw() { drawing = false; }
+
+  canvas.addEventListener('mousedown', startDraw);
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', stopDraw);
+  canvas.addEventListener('mouseleave', stopDraw);
+  canvas.addEventListener('touchstart', startDraw, { passive: false });
+  canvas.addEventListener('touchmove', draw, { passive: false });
+  canvas.addEventListener('touchend', stopDraw);
+}
+
+function clearCanvas(id) {
+  const canvas = document.getElementById(id);
+  const ctx = canvas.getContext('2d');
+  const isSignature = id === 'sig-canvas';
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#bbb';
+  ctx.font = isSignature ? '13px Arial' : '10px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText(isSignature ? 'Sign here' : 'Initials', canvas.width / 2, canvas.height / 2 + 4);
+}
+
+function isCanvasBlank(id) {
+  const canvas = document.getElementById(id);
+  const ctx = canvas.getContext('2d');
+  const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+  // Check if any non-white pixel exists
+  for (let i = 0; i < data.length; i += 4) {
+    if (data[i] < 240 || data[i+1] < 240 || data[i+2] < 240) return false;
+  }
+  return true;
+}
+
+/* ═══════════════════════════════════════════════════════
+   ID UPLOAD HANDLER
+═══════════════════════════════════════════════════════ */
+function setupUpload(inputId, imgId, previewId, callback) {
+  const input = document.getElementById(inputId);
+  const img = document.getElementById(imgId);
+  const preview = document.getElementById(previewId);
+  if (!input) return;
+  input.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      img.src = ev.target.result;
+      preview.style.display = 'block';
+      callback(ev.target.result);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════
+   VALIDATION
+═══════════════════════════════════════════════════════ */
+function validate() {
+  let valid = true;
+
+  const required = [
+    { id: 'f-first', fg: 'fg-first' },
+    { id: 'f-last', fg: 'fg-last' },
+    { id: 'f-dob', fg: 'fg-dob' },
+    { id: 'f-address', fg: 'fg-address' },
+    { id: 'f-city', fg: 'fg-city' },
+    { id: 'f-phone', fg: 'fg-phone' },
+    { id: 'f-artist', fg: 'fg-artist' },
+    { id: 'f-date', fg: 'fg-date' },
+    { id: 'f-placement', fg: 'fg-placement' },
+    { id: 'f-design', fg: 'fg-design' },
+    { id: 'f-sig-name', fg: 'fg-sig-name' },
+    { id: 'f-sig-date', fg: 'fg-sig-date' },
+  ];
+
+  required.forEach(({ id, fg }) => {
+    const el = document.getElementById(id);
+    const fg_el = document.getElementById(fg);
+    if (!el.value.trim()) {
+      fg_el.classList.add('has-error');
+      valid = false;
+    } else {
+      fg_el.classList.remove('has-error');
+    }
+  });
+
+  // ID upload
+  if (!idFrontDataURL) {
+    document.getElementById('id-error').style.display = 'block';
+    valid = false;
+  } else {
+    document.getElementById('id-error').style.display = 'none';
+  }
+
+  // Signature
+  if (isCanvasBlank('sig-canvas')) {
+    document.getElementById('sig-error').style.display = 'block';
+    valid = false;
+  } else {
+    document.getElementById('sig-error').style.display = 'none';
+  }
+
+  // Health radios
+  const healthRadios = ['q-intox', 'q-hep', 'q-skin'];
+  healthRadios.forEach(name => {
+    const checked = document.querySelector(`input[name="${name}"]:checked`);
+    if (!checked) valid = false;
+  });
+
+  if (!valid) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      const firstError = document.querySelector('.has-error, #id-error[style*="block"], #sig-error[style*="block"]');
+      if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 300);
+  }
+
+  return valid;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BUILD RENDER CANVAS — composite JPEG
+═══════════════════════════════════════════════════════ */
+async function buildJPEG() {
+  // Gather all form data
+  const first = document.getElementById('f-first').value.trim();
+  const last = document.getElementById('f-last').value.trim();
+  const dob = document.getElementById('f-dob').value;
+  const age = document.getElementById('f-age').value;
+  const address = document.getElementById('f-address').value.trim();
+  const city = document.getElementById('f-city').value.trim();
+  const state = document.getElementById('f-state').value.trim();
+  const zip = document.getElementById('f-zip').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const artist = document.getElementById('f-artist').value.trim();
+  const procDate = document.getElementById('f-date').value;
+  const placement = document.getElementById('f-placement').value.trim();
+  const design = document.getElementById('f-design').value.trim();
+  const price = document.getElementById('f-price').value.trim();
+  const sigName = document.getElementById('f-sig-name').value.trim();
+  const sigDate = document.getElementById('f-sig-date').value;
+  const healthNotes = document.getElementById('f-health-notes').value.trim();
+
+  // Health answers
+  const q_intox = document.querySelector('input[name="q-intox"]:checked')?.value || '—';
+  const q_hep = document.querySelector('input[name="q-hep"]:checked')?.value || '—';
+  const q_skin = document.querySelector('input[name="q-skin"]:checked')?.value || '—';
+  const q_preg = document.querySelector('input[name="q-preg"]:checked')?.value || '—';
+  const q_meds = document.querySelector('input[name="q-meds"]:checked')?.value || '—';
+  const medConditions = [...document.querySelectorAll('input[name="q-med"]:checked')].map(c => c.value).join(', ') || 'None';
+
+  // Initials canvases
+  const initCanvases = {
+    health: document.getElementById('init-health'),
+    a: document.getElementById('init-a'),
+    b: document.getElementById('init-b'),
+    c: document.getElementById('init-c'),
+    d: document.getElementById('init-d'),
+    e: document.getElementById('init-e'),
+    f: document.getElementById('init-f'),
+  };
+  const sigCanvas = document.getElementById('sig-canvas');
+
+  // ── Build a tall canvas ──
+  const W = 900;
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  // We'll draw section by section and track Y position
+  let Y = 0;
+  const PADDING = 30;
+  const LINE = 22;
+  const SECTION_GAP = 18;
+
+  // Helper: measure text height for a block
+  function sectionHeight(lines) { return lines * LINE + 40; }
+
+  // Pre-calculate total height (rough)
+  const estimatedHeight = 3200 + (idFrontDataURL ? 280 : 0) + (idBackDataURL ? 280 : 0) + (guardianIdDataURL ? 280 : 0);
+  canvas.width = W;
+  canvas.height = estimatedHeight;
+
+  // Background
+  ctx.fillStyle = '#0d0d0d';
+  ctx.fillRect(0, 0, W, canvas.height);
+
+  // ── DRAW HELPERS ──
+  function drawRect(x, y, w, h, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, w, h);
+  }
+
+  function drawText(text, x, y, size, color, bold, align) {
+    ctx.font = `${bold ? '700' : '400'} ${size}px 'Helvetica Neue', Arial, sans-serif`;
+    ctx.fillStyle = color;
+    ctx.textAlign = align || 'left';
+    ctx.fillText(text, x, y);
+  }
+
+  function wrapText(text, x, y, maxW, lineH, size, color) {
+    ctx.font = `400 ${size}px 'Helvetica Neue', Arial, sans-serif`;
+    ctx.fillStyle = color;
+    ctx.textAlign = 'left';
+    const words = text.split(' ');
+    let line = '';
+    let curY = y;
+    words.forEach(word => {
+      const test = line + word + ' ';
+      if (ctx.measureText(test).width > maxW && line !== '') {
+        ctx.fillText(line, x, curY);
+        line = word + ' ';
+        curY += lineH;
+      } else {
+        line = test;
+      }
+    });
+    ctx.fillText(line, x, curY);
+    return curY + lineH;
+  }
+
+  function drawSectionHeader(title, num) {
+    drawRect(0, Y, W, 44, '#222222');
+    drawRect(0, Y + 42, W, 3, '#c8a84b');
+    // Circle num
+    ctx.beginPath();
+    ctx.arc(PADDING + 11, Y + 22, 11, 0, Math.PI * 2);
+    ctx.fillStyle = '#c8a84b';
+    ctx.fill();
+    drawText(String(num), PADDING + 11, Y + 27, 11, '#000', true, 'center');
+    drawText(title.toUpperCase(), PADDING + 30, Y + 27, 13, '#e0e0e0', true);
+    Y += 44 + 3 + 16;
+  }
+
+  function drawField(label, value) {
+    drawText(label.toUpperCase(), PADDING, Y, 10, '#c8a84b', true);
+    Y += 14;
+    drawRect(PADDING, Y, W - PADDING * 2, 1, '#2a2a2a');
+    Y += 6;
+    drawText(value || '—', PADDING, Y, 14, '#f0f0f0', false);
+    Y += LINE + 4;
+  }
+
+  function drawFieldRow(fields) {
+    const colW = (W - PADDING * 2 - (fields.length - 1) * 10) / fields.length;
+    const startY = Y;
+    let maxH = 0;
+    fields.forEach((f, i) => {
+      const x = PADDING + i * (colW + 10);
+      ctx.font = `700 10px 'Helvetica Neue', Arial, sans-serif`;
+      ctx.fillStyle = '#c8a84b';
+      ctx.textAlign = 'left';
+      ctx.fillText(f.label.toUpperCase(), x, startY);
+      ctx.fillStyle = '#2a2a2a';
+      ctx.fillRect(x, startY + 14, colW, 1);
+      ctx.font = `400 14px 'Helvetica Neue', Arial, sans-serif`;
+      ctx.fillStyle = '#f0f0f0';
+      ctx.fillText(f.value || '—', x, startY + 26);
+      maxH = Math.max(maxH, 40);
+    });
+    Y = startY + maxH;
+  }
+
+  function drawDisclosure(letter, text) {
+    drawRect(PADDING, Y, W - PADDING * 2, 3, '#c8a84b');
+    Y += 8;
+    drawRect(PADDING, Y, W - PADDING * 2, 1, '#2a2a2a');
+    Y += 8;
+    ctx.font = `700 11px 'Helvetica Neue', Arial, sans-serif`;
+    ctx.fillStyle = '#e8c85a';
+    ctx.textAlign = 'left';
+    ctx.fillText(`DISCLOSURE ${letter}`, PADDING, Y);
+    Y += 16;
+    Y = wrapText(text, PADDING, Y, W - PADDING * 2 - 10, 18, 11, '#cccccc');
+    Y += 6;
+  }
+
+  function drawInitialsRow(label, canvasEl) {
+    const rowH = 60;
+    drawRect(PADDING, Y, W - PADDING * 2, rowH, '#111111');
+    // Label
+    ctx.font = `400 11px 'Helvetica Neue', Arial, sans-serif`;
+    ctx.fillStyle = '#888';
+    ctx.textAlign = 'left';
+    const labelX = PADDING + 10;
+    const labelMaxW = W - PADDING * 2 - 120;
+    wrapText(label, labelX, Y + 20, labelMaxW, 15, 11, '#888');
+    // Initials image
+    const initX = W - PADDING - 100;
+    ctx.drawImage(canvasEl, initX, Y + 8, 90, 44);
+    // Border around initials
+    ctx.strokeStyle = '#333';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(initX, Y + 8, 90, 44);
+    Y += rowH + 8;
+  }
+
+  function drawImageSection(label, dataURL) {
+    if (!dataURL) return;
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => {
+        const maxW = W - PADDING * 2;
+        const ratio = img.height / img.width;
+        const drawW = Math.min(maxW, 400);
+        const drawH = drawW * ratio;
+        drawText(label.toUpperCase(), PADDING, Y, 10, '#c8a84b', true);
+        Y += 14;
+        ctx.drawImage(img, PADDING, Y, drawW, drawH);
+        ctx.strokeStyle = '#c8a84b';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(PADDING, Y, drawW, drawH);
+        Y += drawH + 16;
+        resolve();
+      };
+      img.src = dataURL;
+    });
+  }
+
+  // ══ HEADER ══
+  drawRect(0, 0, W, 80, '#111111');
+  drawRect(0, 78, W, 3, '#c8a84b');
+  drawText('SICK ONE TATTOOS', W / 2, 38, 28, '#c8a84b', true, 'center');
+  drawText('TATTOO CONSENT & RELEASE FORM', W / 2, 62, 12, '#888888', false, 'center');
+  Y = 100;
+
+  // SNHD badge
+  drawRect(PADDING, Y, 300, 22, '#1e3a1e');
+  ctx.strokeStyle = '#2e6b2e';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(PADDING, Y, 300, 22);
+  drawText('✓ SNHD COMPLIANT — SOUTHERN NEVADA HEALTH DISTRICT', PADDING + 10, Y + 15, 9, '#5cb85c', true);
+  Y += 36;
+
+  // ══ SECTION 1: CLIENT INFO ══
+  drawSectionHeader('Client Information', 1);
+  drawFieldRow([
+    { label: 'First Name', value: first },
+    { label: 'Last Name', value: last }
+  ]);
+  Y += 8;
+  drawFieldRow([
+    { label: 'Date of Birth', value: dob },
+    { label: 'Age', value: age }
+  ]);
+  Y += 8;
+  drawField('Street Address', address);
+  drawFieldRow([
+    { label: 'City', value: city },
+    { label: 'State', value: state },
+    { label: 'ZIP', value: zip }
+  ]);
+  Y += 8;
+  drawFieldRow([
+    { label: 'Phone', value: phone },
+    { label: 'Email', value: email || 'Not provided' }
+  ]);
+  Y += SECTION_GAP;
+
+  // ══ SECTION 2: PROCEDURE ══
+  drawSectionHeader('Artist & Procedure Details', 2);
+  drawField('Tattoo Artist', artist);
+  drawFieldRow([
+    { label: 'Date of Procedure', value: procDate },
+    { label: 'Placement on Body', value: placement },
+    { label: 'Quoted Price', value: price || 'N/A' }
+  ]);
+  Y += 8;
+  drawText('TATTOO DESIGN DESCRIPTION', PADDING, Y, 10, '#c8a84b', true);
+  Y += 14;
+  Y = wrapText(design, PADDING, Y, W - PADDING * 2, 18, 13, '#f0f0f0');
+  Y += SECTION_GAP;
+
+  // ══ SECTION 3: ID PHOTOS ══
+  drawSectionHeader('Government-Issued Photo ID', 3);
+  await drawImageSection('Front of ID', idFrontDataURL);
+  await drawImageSection('Back of ID', idBackDataURL);
+  Y += SECTION_GAP;
+
+  // ══ SECTION 4: HEALTH ══
+  drawSectionHeader('Health Assessment', 4);
+  drawFieldRow([
+    { label: 'Under influence of alcohol/drugs?', value: q_intox },
+    { label: 'Jaundice/Hepatitis (last 12 mo)?', value: q_hep }
+  ]);
+  Y += 8;
+  drawFieldRow([
+    { label: 'Skin conditions in tattoo area?', value: q_skin },
+    { label: 'Pregnant/Breastfeeding?', value: q_preg }
+  ]);
+  Y += 8;
+  drawFieldRow([
+    { label: 'Blood thinners/healing meds?', value: q_meds },
+    { label: 'Medical conditions', value: medConditions }
+  ]);
+  Y += 8;
+  if (healthNotes) {
+    drawText('ADDITIONAL HEALTH NOTES', PADDING, Y, 10, '#c8a84b', true);
+    Y += 14;
+    Y = wrapText(healthNotes, PADDING, Y, W - PADDING * 2, 18, 12, '#ccc');
+  }
+  Y += 8;
+  drawInitialsRow('I confirm all health information above is truthful and accurate.', initCanvases.health);
+  Y += SECTION_GAP;
+
+  // ══ SECTION 5: DISCLOSURES ══
+  drawSectionHeader('Required Disclosures & Initials', 5);
+
+  drawDisclosure('A — Permanence', 'I understand that a tattoo is considered PERMANENT. Removal requires a surgical or laser procedure and may result in permanent scarring and disfigurement. I have been fully advised of this fact. (SNHD §7.2)');
+  drawInitialsRow('I have read and understood Disclosure A — Permanence.', initCanvases.a);
+
+  drawDisclosure('B — Sobriety', 'I confirm that I am NOT under the influence of alcohol, drugs, or any intoxicating substances at the time of this procedure. I understand the artist may refuse service if they reasonably suspect otherwise. (SNHD §7.3.1)');
+  drawInitialsRow('I have read and understood Disclosure B — Sobriety.', initCanvases.b);
+
+  drawDisclosure('C — Aftercare', 'I acknowledge that I have received or will receive both verbal and written aftercare instructions. I accept full responsibility for following these instructions. Sick One Tattoos is not liable for complications arising from failure to follow aftercare guidance. (SNHD §8.5)');
+  drawInitialsRow('I have read and understood Disclosure C — Aftercare.', initCanvases.c);
+
+  drawDisclosure('D — Infection Reporting', 'I understand that any infection resulting from this procedure must be immediately reported to Sick One Tattoos and may be reported to the Southern Nevada Health District. I agree to notify the studio if I experience any signs of infection. (SNHD §8.6)');
+  drawInitialsRow('I have read and understood Disclosure D — Infection Reporting.', initCanvases.d);
+
+  drawDisclosure('E — Studio Rules', 'I agree that no food, beverages (except sealed water), or smoking are permitted in the tattoo area during the procedure. I agree to conduct myself in a calm and respectful manner. The artist reserves the right to refuse or stop service at any time. (SNHD §7.4)');
+  drawInitialsRow('I have read and understood Disclosure E — Studio Rules.', initCanvases.e);
+
+  drawDisclosure('F — Record Keeping', 'I consent to Sick One Tattoos retaining a permanent record of this procedure including my name, age, address, date of procedure, artist name, placement, and design description, as required by the Southern Nevada Health District. Records are maintained for a minimum of two (2) years. (SNHD §7.5)');
+  drawInitialsRow('I have read and understood Disclosure F — Record Keeping.', initCanvases.f);
+  Y += SECTION_GAP;
+
+  // ══ SECTION 6: FULL CONSENT & SIGNATURE ══
+  drawSectionHeader('Full Consent & Signature', 6);
+
+  const consentText = `By signing below, I voluntarily consent to receive a tattoo from Sick One Tattoos. I affirm that: (1) I am 18 years of age or older (or have obtained parental/guardian consent per SNHD §7.1.4); (2) All information provided is truthful and accurate; (3) I have read, understood, and initialed all disclosures; (4) I release Sick One Tattoos and its artists from liability for complications arising from pre-existing medical conditions I failed to disclose; (5) This consent was completed voluntarily and without coercion. This facility is permitted by the Southern Nevada Health District (SNHD). SNHD: (702) 759-0677 | bodyart@snhd.org`;
+  Y = wrapText(consentText, PADDING, Y, W - PADDING * 2, 18, 11, '#cccccc');
+  Y += 14;
+
+  drawFieldRow([
+    { label: 'Printed Full Name', value: sigName },
+    { label: 'Date Signed', value: sigDate }
+  ]);
+  Y += 16;
+
+  // Signature
+  drawText('SIGNATURE', PADDING, Y, 10, '#c8a84b', true);
+  Y += 10;
+  const sigW = Math.min(W - PADDING * 2, 500);
+  const sigH = 130;
+  ctx.drawImage(sigCanvas, PADDING, Y, sigW, sigH);
+  ctx.strokeStyle = '#333';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(PADDING, Y, sigW, sigH);
+  Y += sigH + 20;
+
+  // ══ FOOTER ══
+  drawRect(0, Y, W, 50, '#111111');
+  drawRect(0, Y, W, 2, '#c8a84b');
+  drawText('Sick One Tattoos  |  SNHD Compliant  |  Records retained per SNHD §7.5.2.3 (min. 2 years)', W / 2, Y + 22, 10, '#666', false, 'center');
+  const ts = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+  drawText(`Form completed: ${ts}`, W / 2, Y + 38, 9, '#444', false, 'center');
+  Y += 60;
+
+  // Trim canvas to actual content
+  const finalCanvas = document.createElement('canvas');
+  finalCanvas.width = W;
+  finalCanvas.height = Y;
+  const finalCtx = finalCanvas.getContext('2d');
+  finalCtx.drawImage(canvas, 0, 0);
+
+  return finalCanvas.toDataURL('image/jpeg', 0.92);
+}
+
+/* ═══════════════════════════════════════════════════════
+   SUBMIT HANDLER
+═══════════════════════════════════════════════════════ */
+async function handleSubmit() {
+  if (!validate()) return;
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Generating...';
+
+  const progressWrap = document.getElementById('progress-wrap');
+  const progressBar = document.getElementById('progress-bar-inner');
+  const progressLabel = document.getElementById('progress-label');
+  progressWrap.style.display = 'block';
+
+  let prog = 0;
+  const progInterval = setInterval(() => {
+    prog = Math.min(prog + 2, 90);
+    progressBar.style.width = prog + '%';
+  }, 60);
+
+  try {
+    // Build the JPEG
+    generatedImageDataURL = await buildJPEG();
+    clearInterval(progInterval);
+    progressBar.style.width = '100%';
+    progressLabel.textContent = 'Form ready!';
+
+    // Collect key info for email body
+    const firstName    = document.getElementById('f-first').value.trim();
+    const lastName     = document.getElementById('f-last').value.trim();
+    const phone        = document.getElementById('f-phone').value.trim();
+    const dob          = document.getElementById('f-dob').value;
+    const artist       = document.getElementById('f-artist').value.trim();
+    const procDate     = document.getElementById('f-date').value;
+    const placement    = document.getElementById('f-placement').value.trim();
+    const design       = document.getElementById('f-design').value.trim();
+    const price        = document.getElementById('f-price').value.trim();
+    const dateStr      = new Date().toISOString().split('T')[0];
+    const fullName     = `${firstName} ${lastName}`;
+    const fileName     = `SickOneTattoos_Consent_${firstName}_${lastName}_${dateStr}.jpg`;
+
+    // Auto-download the JPEG to their device
+    const dlLink = document.createElement('a');
+    dlLink.href = generatedImageDataURL;
+    dlLink.download = fileName;
+    dlLink.click();
+
+    // Also download ID front if provided
+    if (idFrontDataURL) {
+      setTimeout(() => {
+        const idLink = document.createElement('a');
+        idLink.href = idFrontDataURL;
+        idLink.download = `SickOneTattoos_ID_Front_${firstName}_${lastName}_${dateStr}.jpg`;
+        idLink.click();
+      }, 500);
+    }
+
+    // Also download ID back if provided
+    if (idBackDataURL) {
+      setTimeout(() => {
+        const idLink2 = document.createElement('a');
+        idLink2.href = idBackDataURL;
+        idLink2.download = `SickOneTattoos_ID_Back_${firstName}_${lastName}_${dateStr}.jpg`;
+        idLink2.click();
+      }, 1000);
+    }
+
+    // Build email body with all form details
+    const emailSubject = encodeURIComponent(`Tattoo Consent Form — ${fullName} (${dateStr})`);
+    const emailBody = encodeURIComponent(
+`SICK ONE TATTOOS — COMPLETED CONSENT FORM
+==========================================
+Client Name:    ${fullName}
+Phone:          ${phone}
+Date of Birth:  ${dob}
+Artist:         ${artist}
+Procedure Date: ${procDate}
+Placement:      ${placement}
+Design:         ${design}
+Quoted Price:   ${price || 'N/A'}
+Submitted:      ${new Date().toLocaleString()}
+==========================================
+
+The completed consent form image (${fileName}) has been saved to your Photos/Downloads.
+
+PLEASE ATTACH the saved image to this email before sending.
+
+Thank you!`);
+
+    // Store for the modal button
+    window._mailtoURL = `mailto:${STUDIO_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
+
+    // Update modal body with clear instructions
+    document.getElementById('modal-body').innerHTML =
+      `Your form image has been <strong style="color:#c8a84b;">saved to your Photos</strong>.<br><br>
+      Tap <strong style="color:#c8a84b;">"Open Email App & Send"</strong> below, then:
+      <ol style="text-align:left;margin:10px 0 0 16px;line-height:2;">
+        <li>Tap the <strong>attach/paperclip icon</strong></li>
+        <li>Find and attach <strong>${fileName}</strong> from your Photos</li>
+        <li>Tap <strong>Send</strong></li>
+      </ol>`;
+
+    setTimeout(() => {
+      progressWrap.style.display = 'none';
+      btn.disabled = false;
+      btn.textContent = 'Submit Consent Form';
+      showModal();
+    }, 800);
+
+  } catch (err) {
+    clearInterval(progInterval);
+    progressWrap.style.display = 'none';
+    btn.disabled = false;
+    btn.textContent = 'Submit Consent Form';
+    alert('Error generating form: ' + err.message + '\n\nPlease try again.');
+    console.error(err);
+  }
+}
+
+function openEmail() {
+  if (window._mailtoURL) {
+    window.location.href = window._mailtoURL;
+  }
+  closeModal();
+}
+
+/* ═══════════════════════════════════════════════════════
+   MODAL
+═══════════════════════════════════════════════════════ */
+function showModal() {
+  document.getElementById('modal-overlay').classList.add('active');
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+}
+
+/* ═══════════════════════════════════════════════════════
+   MODAL HELPERS
+═══════════════════════════════════════════════════════ */
+</script>
+</body>
+</html>
