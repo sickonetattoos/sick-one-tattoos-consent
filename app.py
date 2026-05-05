@@ -1,13 +1,9 @@
 """
 Sick One Tattoos — Consent Form App
-Serves the form and emails completed submissions to the shop Gmail.
+Serves the form and emails completed submissions via SendGrid HTTP API.
 """
 
-import os, smtplib, base64
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.base import MIMEBase
-from email import encoders
+import os, base64, json, requests as req_lib
 from datetime import datetime
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
@@ -16,11 +12,11 @@ app = Flask(__name__)
 CORS(app, origins="*")
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50 MB max
 
-RECIPIENT_EMAIL = "laser.tattoo.solutions@gmail.com"
-SENDER_EMAIL    = "laser.tattoo.solutions@gmail.com"
-SENDER_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "aelczljtawyrobbq")
-SMTP_HOST       = "smtp.gmail.com"
-SMTP_PORT       = 587
+RECIPIENT_EMAIL  = "laser.tattoo.solutions@gmail.com"
+SENDER_EMAIL     = "laser.tattoo.solutions@gmail.com"
+SENDER_NAME      = "Sick One Tattoos Forms"
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY", "")
+SENDGRID_URL     = "https://api.sendgrid.com/v3/mail/send"
 
 @app.route("/", methods=["GET"])
 def index():
@@ -58,12 +54,7 @@ def submit():
         id_front_bytes = decode_b64(data.get("idFrontDataUrl", ""))
         id_back_bytes  = decode_b64(data.get("idBackDataUrl", ""))
 
-        # ── Build email ──────────────────────────────────────
-        msg = MIMEMultipart("mixed")
-        msg["Subject"] = f"✅ New Consent Form — {client_name} ({submitted_at})"
-        msg["From"]    = f"Sick One Tattoos Forms <{SENDER_EMAIL}>"
-        msg["To"]      = RECIPIENT_EMAIL
-
+        # ── HTML email body ──────────────────────────────────
         html = f"""
         <div style="font-family:Arial,sans-serif;max-width:620px;margin:0 auto;
                     background:#0d0d0d;color:#fff;border-radius:12px;overflow:hidden;">
@@ -102,40 +93,56 @@ def submit():
           </div>
           <div style="background:#111;padding:10px 28px;text-align:center;">
             <p style="margin:0;font-size:11px;color:#555;">
-              Sick One Tattoos · SNHD Compliant Consent System</p>
+              Sick One Tattoos &middot; SNHD Compliant Consent System</p>
           </div>
         </div>"""
-        msg.attach(MIMEText(html, "html"))
 
-        def attach_file(file_bytes, filename):
-            part = MIMEBase("application", "octet-stream")
-            part.set_payload(file_bytes)
-            encoders.encode_base64(part)
-            part.add_header("Content-Disposition",
-                            f'attachment; filename="{filename}"')
-            part.add_header("Content-Type", "image/jpeg")
-            msg.attach(part)
+        # ── Build SendGrid payload ───────────────────────────
+        payload = {
+            "personalizations": [{
+                "to": [{"email": RECIPIENT_EMAIL}],
+                "subject": f"New Consent Form - {client_name} ({submitted_at})"
+            }],
+            "from": {"email": SENDER_EMAIL, "name": SENDER_NAME},
+            "content": [{"type": "text/html", "value": html}],
+            "attachments": []
+        }
+
+        def add_attachment(file_bytes, filename):
+            payload["attachments"].append({
+                "content": base64.b64encode(file_bytes).decode(),
+                "type": "image/jpeg",
+                "filename": filename,
+                "disposition": "attachment"
+            })
 
         if jpeg_bytes:
-            attach_file(jpeg_bytes,
-                        f"ConsentForm_{safe_name}_{date_str}.jpg")
+            add_attachment(jpeg_bytes, f"ConsentForm_{safe_name}_{date_str}.jpg")
         if id_front_bytes:
-            attach_file(id_front_bytes,
-                        f"ID_Front_{safe_name}_{date_str}.jpg")
+            add_attachment(id_front_bytes, f"ID_Front_{safe_name}_{date_str}.jpg")
         if id_back_bytes:
-            attach_file(id_back_bytes,
-                        f"ID_Back_{safe_name}_{date_str}.jpg")
+            add_attachment(id_back_bytes, f"ID_Back_{safe_name}_{date_str}.jpg")
 
-        # ── Send via Gmail SMTP ──────────────────────────────
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as srv:
-            srv.ehlo()
-            srv.starttls()
-            srv.ehlo()
-            srv.login(SENDER_EMAIL, SENDER_PASSWORD)
-            srv.sendmail(SENDER_EMAIL, RECIPIENT_EMAIL, msg.as_string())
+        if not payload["attachments"]:
+            del payload["attachments"]
 
-        print(f"[OK] Email sent for: {client_name}")
-        return jsonify({"success": True}), 200
+        # ── Send via SendGrid HTTPS API ──────────────────────
+        resp = req_lib.post(
+            SENDGRID_URL,
+            headers={
+                "Authorization": f"Bearer {SENDGRID_API_KEY}",
+                "Content-Type": "application/json"
+            },
+            json=payload,
+            timeout=30
+        )
+
+        if resp.status_code in (200, 202):
+            print(f"[OK] Email sent for: {client_name}")
+            return jsonify({"success": True}), 200
+        else:
+            print(f"[ERROR] SendGrid {resp.status_code}: {resp.text}")
+            return jsonify({"error": f"SendGrid error {resp.status_code}: {resp.text}"}), 500
 
     except Exception as e:
         print(f"[ERROR] {e}")
