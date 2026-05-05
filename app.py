@@ -1,9 +1,12 @@
 """
 Sick One Tattoos — Consent Form App
 Serves the form and emails completed submissions via SendGrid HTTP API.
+Uses only Python stdlib (urllib) — no external HTTP library needed.
 """
 
-import os, base64, json, requests as req_lib
+import os, base64, json
+from urllib.request import urlopen, Request
+from urllib.error import URLError, HTTPError
 from datetime import datetime
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
@@ -126,24 +129,31 @@ def submit():
         if not payload["attachments"]:
             del payload["attachments"]
 
-        # ── Send via SendGrid HTTPS API ──────────────────────
-        resp = req_lib.post(
+        # ── Send via SendGrid HTTPS API using stdlib urllib ──
+        body = json.dumps(payload).encode("utf-8")
+        req = Request(
             SENDGRID_URL,
+            data=body,
             headers={
                 "Authorization": f"Bearer {SENDGRID_API_KEY}",
                 "Content-Type": "application/json"
             },
-            json=payload,
-            timeout=30
+            method="POST"
         )
+        with urlopen(req, timeout=30) as resp:
+            status = resp.status
 
-        if resp.status_code in (200, 202):
+        if status in (200, 202):
             print(f"[OK] Email sent for: {client_name}")
             return jsonify({"success": True}), 200
         else:
-            print(f"[ERROR] SendGrid {resp.status_code}: {resp.text}")
-            return jsonify({"error": f"SendGrid error {resp.status_code}: {resp.text}"}), 500
+            print(f"[ERROR] SendGrid returned status {status}")
+            return jsonify({"error": f"SendGrid error {status}"}), 500
 
+    except HTTPError as e:
+        body = e.read().decode("utf-8", errors="replace")
+        print(f"[ERROR] SendGrid HTTP {e.code}: {body}")
+        return jsonify({"error": f"SendGrid error {e.code}: {body}"}), 500
     except Exception as e:
         print(f"[ERROR] {e}")
         return jsonify({"error": str(e)}), 500
