@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Laser Tattoo Solutions — Laser Tattoo Removal Consent Form</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #0d0d0d;
+    color: #f0f0f0;
+    min-height: 100vh;
+    padding: 0 0 60px 0;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+    border-bottom: 3px solid #c8a84b;
+    padding: 24px 20px 18px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84b;
+    text-shadow: 0 0 20px rgba(200,168,75,0.4);
+  }
+  .header p {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    margin: 16px 14px;
+    overflow: hidden;
+  }
+  .section-header {
+    background: #222;
+    border-bottom: 2px solid #c8a84b;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-num {
+    background: #c8a84b;
+    color: #000;
+    font-size: 11px;
+    font-weight: 900;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #e0e0e0;
+  }
+  .section-body {
+    padding: 16px;
+  }
+
+  /* ── FORM FIELDS ── */
+  .field-group {
+    margin-bottom: 14px;
+  }
+  .field-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #c8a84b;
+    margin-bottom: 6px;
+  }
+  .field-group input[type="text"],
+  .field-group input[type="date"],
+  .field-group input[type="tel"],
+  .field-group input[type="email"],
+  .field-group input[type="number"],
+  .field-group select,
+  .field-group textarea {
+    width: 100%;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #f0f0f0;
+    font-size: 15px;
+    padding: 11px 13px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .field-group input:focus,
+  .field-group select:focus,
+  .field-group textarea:focus {
+    border-color: #c8a84b;
+  }
+  .field-group textarea {
+    resize: vertical;
+    min-height: 70px;
+  }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .field-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* ── RADIO / CHECKBOX ── */
+  .radio-group, .check-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .radio-option, .check-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .radio-option input, .check-option input {
+    accent-color: #c8a84b;
+    width: 16px;
+    height: 16px;
+  }
+  .radio-option:has(input:checked),
+  .check-option:has(input:checked) {
+    border-color: #c8a84b;
+    background: #1f1a0d;
+  }
+
+  /* ── DISCLOSURE TEXT ── */
+  .disclosure-box {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-left: 3px solid #c8a84b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 14px;
+  }
+  .disclosure-box strong {
+    color: #e8c85a;
+  }
+
+  /* ── INITIALS BOX ── */
+  .initials-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 10px;
+  }
+  .initials-label {
+    font-size: 11px;
+    color: #888;
+    flex: 1;
+    line-height: 1.4;
+  }
+  .initials-canvas-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .initials-canvas {
+    background: #fff;
+    border-radius: 4px;
+    cursor: crosshair;
+    touch-action: none;
+    display: block;
+  }
+  .clear-btn-small {
+    background: none;
+    border: 1px solid #444;
+    color: #888;
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .clear-btn-small:hover { border-color: #c8a84b; color: #c8a84b; }
+
+  /* ── SIGNATURE PAD ── */
+  .sig-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  #sig-canvas {
+    background: #fff;
+    border-radius: 8px;
+    cursor: crosshair;
+    touch-action: none;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+  }
+  .sig-controls {
+    display: flex;
+    gap: 10px;
+  }
+  .btn-outline {
+    background: none;
+    border: 1px solid #555;
+    color: #aaa;
+    font-size: 12px;
+    padding: 7px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: #c8a84b; color: #c8a84b; }
+
+  /* ── ID UPLOAD ── */
+  .upload-zone {
+    border: 2px dashed #333;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    position: relative;
+    background: #111;
+  }
+  .upload-zone:hover { border-color: #c8a84b; }
+  .upload-zone input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+  .upload-icon { font-size: 32px; margin-bottom: 8px; }
+  .upload-text { font-size: 13px; color: #888; }
+  .upload-text strong { color: #c8a84b; }
+  .id-preview {
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+  }
+  .id-preview img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #c8a84b;
+  }
+  .id-preview-label {
+    font-size: 10px;
+    color: #5cb85c;
+    text-align: center;
+    margin-top: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── REQUIRED BADGE ── */
+  .req { color: #e05555; margin-left: 2px; }
+
+  /* ── SUBMIT BUTTON ── */
+  .submit-area {
+    padding: 20px 14px;
+    text-align: center;
+  }
+  #submit-btn {
+    background: linear-gradient(135deg, #c8a84b, #a07830);
+    color: #000;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    padding: 18px 40px;
+    width: 100%;
+    max-width: 400px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(200,168,75,0.35);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  #submit-btn:active { transform: scale(0.97); }
+  #submit-btn:disabled {
+    background: #333;
+    color: #666;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  .submit-note {
+    font-size: 11px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* ── PROGRESS BAR ── */
+  #progress-wrap {
+    display: none;
+    padding: 0 14px;
+    margin-bottom: 10px;
+  }
+  #progress-bar-outer {
+    background: #222;
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+  }
+  #progress-bar-inner {
+    background: linear-gradient(90deg, #c8a84b, #e8c85a);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s;
+    border-radius: 10px;
+  }
+  #progress-label {
+    font-size: 11px;
+    color: #888;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  /* ── MODAL ── */
+  #modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  #modal-overlay.active { display: flex; }
+  #modal-box {
+    background: #1a1a1a;
+    border: 2px solid #c8a84b;
+    border-radius: 14px;
+    padding: 24px 20px;
+    max-width: 360px;
+    width: 100%;
+    text-align: center;
+  }
+  #modal-box h2 {
+    color: #c8a84b;
+    font-size: 18px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  #modal-box p {
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  .modal-btn-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  .modal-btn {
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+  }
+  .modal-btn:hover { opacity: 0.85; }
+  .modal-btn-gold { background: #c8a84b; color: #000; }
+  .modal-btn-gray { background: #333; color: #aaa; }
+
+  /* ── HIDDEN RENDER CANVAS ── */
+  #render-area {
+    position: fixed;
+    left: -9999px;
+    top: 0;
+    visibility: hidden;
+  }
+
+  /* ── VALIDATION ERROR ── */
+  .field-error {
+    font-size: 10px;
+    color: #e05555;
+    margin-top: 4px;
+    display: none;
+  }
+  .field-group.has-error input,
+  .field-group.has-error select,
+  .field-group.has-error textarea {
+    border-color: #e05555;
+  }
+  .field-group.has-error .field-error { display: block; }
+
+  select option { background: #1a1a1a; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════ HEADER -->
+<div class="header">
+  <h1>Laser Tattoo Solutions</h1>
+  <p>Laser Tattoo Removal Consent &amp; Release Form</p>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 1: CLIENT INFO -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div class="section-title">Client Information</div>
+  </div>
+  <div class="section-body">
+    <div class="field-row">
+      <div class="field-group" id="fg-first">
+        <label>First Name <span class="req">*</span></label>
+        <input type="text" id="f-first" placeholder="First" autocomplete="given-name">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group" id="fg-last">
+        <label>Last Name <span class="req">*</span></label>
+        <input type="text" id="f-last" placeholder="Last" autocomplete="family-name">
+        <div class="field-error">Required</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field-group" id="fg-dob">
+        <label>Date of Birth <span class="req">*</span></label>
+        <input type="date" id="f-dob">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group">
+        <label>Age (auto-calculated)</label>
+        <input type="text" id="f-age" placeholder="&#8212;" readonly style="color:#c8a84b;">
+      </div>
+    </div>
+    <div class="field-group" id="fg-address">
+      <label>Street Address <span class="req">*</span></label>
+      <input type="text" id="f-address" placeholder="123 Main St" autocomplete="street-address">
+      <div class="field-error">Required</div>
+    </div>
+    <div class="field-row-3">
+      <div class="field-group" id="fg-city">
+        <label>City <span class="req">*</span></label>
+        <input type="text" id="f-city" placeholder="Las Vegas" autocomplete="address-level2">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group">
+        <label>State</label>
+        <input type="text" id="f-state" placeholder="NV" maxlength="2" autocomplete="address-level1">
+      </div>
+      <div class="field-group">
+        <label>ZIP</label>
+        <input type="tel" id="f-zip" placeholder="89101" maxlength="5" autocomplete="postal-code">
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field-group" id="fg-phone">
+        <label>Phone Number <span class="req">*</span></label>
+        <input type="tel" id="f-phone" placeholder="(702) 555-0000" autocomplete="tel">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group">
+        <label>Email (optional)</label>
+        <input type="email" id="f-email" placeholder="you@email.com" autocomplete="email">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 2: TECHNICIAN & PROCEDURE -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div class="section-title">Technician &amp; Procedure Details</div>
+  </div>
+  <div class="section-body">
+    <div class="field-group" id="fg-tech">
+      <label>Technician Name <span class="req">*</span></label>
+      <input type="text" id="f-tech" placeholder="Technician performing the treatment">
+      <div class="field-error">Required</div>
+    </div>
+    <div class="field-row">
+      <div class="field-group" id="fg-date">
+        <label>Date of Treatment <span class="req">*</span></label>
+        <input type="date" id="f-date">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group" id="fg-placement">
+        <label>Treatment Area / Location <span class="req">*</span></label>
+        <input type="text" id="f-placement" placeholder="e.g., Left forearm">
+        <div class="field-error">Required</div>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field-group">
+        <label>Session Number</label>
+        <input type="number" id="f-session" placeholder="e.g., 1" min="1" style="max-width:120px;">
+      </div>
+      <div class="field-group">
+        <label>Estimated Total Sessions</label>
+        <input type="text" id="f-est-sessions" placeholder="e.g., 6&#8211;10">
+      </div>
+    </div>
+    <div class="field-group">
+      <label>Ink Colors Being Treated</label>
+      <input type="text" id="f-ink-colors" placeholder="e.g., Black, dark blue, red">
+    </div>
+    <div class="field-group" id="fg-price">
+      <label>Quoted Price</label>
+      <input type="text" id="f-price" placeholder="e.g., $150 per session" style="max-width:260px;">
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 3: ID UPLOAD -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div class="section-title">Government-Issued Photo ID <span class="req">*</span></div>
+  </div>
+  <div class="section-body">
+    <p style="font-size:12px;color:#888;margin-bottom:12px;line-height:1.6;">
+      Age must be verified by government-issued photo ID before any procedure. Upload a clear photo of your ID below.
+    </p>
+    <div class="upload-zone" id="id-front-zone">
+      <input type="file" id="id-front-input" accept="image/*" capture="environment">
+      <div class="upload-icon">&#128247;</div>
+      <div class="upload-text"><strong>Tap to Upload Front of ID</strong><br>Driver's License, State ID, or Passport</div>
+    </div>
+    <div class="id-preview" id="id-front-preview">
+      <img id="id-front-img" src="" alt="ID Front">
+      <div class="id-preview-label">&#10003; Front of ID uploaded</div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="upload-zone" id="id-back-zone">
+        <input type="file" id="id-back-input" accept="image/*" capture="environment">
+        <div class="upload-icon">&#129370;</div>
+        <div class="upload-text"><strong>Tap to Upload Back of ID</strong> <span style="color:#666;">(optional)</span></div>
+      </div>
+      <div class="id-preview" id="id-back-preview">
+        <img id="id-back-img" src="" alt="ID Back">
+        <div class="id-preview-label">&#10003; Back of ID uploaded</div>
+      </div>
+    </div>
+    <div class="field-error" id="id-error" style="display:none;margin-top:8px;">Please upload a photo of your government-issued ID.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 4: HEALTH ASSESSMENT -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div class="section-title">Health Assessment</div>
+  </div>
+  <div class="section-body">
+    <p style="font-size:11px;color:#888;margin-bottom:14px;line-height:1.6;">
+      Please answer the following questions honestly. This information is required to ensure your safety during laser treatment.
+    </p>
+
+    <!-- Q1: Fitzpatrick Skin Type -->
+    <div class="field-group" id="fg-skin-type">
+      <label>Fitzpatrick Skin Type <span class="req">*</span></label>
+      <select id="f-skin-type">
+        <option value="">&#8212; Select your skin type &#8212;</option>
+        <option value="Type I - Very fair, always burns, never tans">Type I &#8212; Very fair, always burns, never tans</option>
+        <option value="Type II - Fair, usually burns, sometimes tans">Type II &#8212; Fair, usually burns, sometimes tans</option>
+        <option value="Type III - Medium, sometimes burns, always tans">Type III &#8212; Medium, sometimes burns, always tans</option>
+        <option value="Type IV - Olive, rarely burns, always tans">Type IV &#8212; Olive, rarely burns, always tans</option>
+        <option value="Type V - Brown, very rarely burns, tans very easily">Type V &#8212; Brown, very rarely burns, tans very easily</option>
+        <option value="Type VI - Dark brown/black, never burns">Type VI &#8212; Dark brown/black, never burns</option>
+      </select>
+      <div class="field-error">Required</div>
+    </div>
+
+    <!-- Q2: Recent sun exposure -->
+    <div class="field-group">
+      <label>Have you had significant sun exposure or used a tanning bed in the last 4 weeks? <span class="req">*</span></label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-sun" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-sun" value="Yes"> Yes</label>
+      </div>
+    </div>
+
+    <!-- Q3: Keloid scarring -->
+    <div class="field-group">
+      <label>Do you have a history of keloid or hypertrophic scarring? <span class="req">*</span></label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-keloid" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-keloid" value="Yes"> Yes</label>
+      </div>
+    </div>
+
+    <!-- Q4: Photosensitive medications -->
+    <div class="field-group">
+      <label>Are you currently taking any photosensitive medications (e.g., Accutane, tetracycline, certain antibiotics)? <span class="req">*</span></label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-photomed" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-photomed" value="Yes"> Yes</label>
+      </div>
+    </div>
+
+    <!-- Q5: Active infection -->
+    <div class="field-group">
+      <label>Is there any active skin infection, open wound, or irritation in the treatment area? <span class="req">*</span></label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-infection" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-infection" value="Yes"> Yes</label>
+      </div>
+    </div>
+
+    <!-- Q6: Cold sores -->
+    <div class="field-group">
+      <label>Do you have a history of cold sores or herpes simplex (relevant for facial treatments)?</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-coldsore" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-coldsore" value="Yes"> Yes</label>
+        <label class="radio-option"><input type="radio" name="q-coldsore" value="N/A"> N/A</label>
+      </div>
+    </div>
+
+    <!-- Q7: Pregnancy -->
+    <div class="field-group">
+      <label>Are you pregnant or breastfeeding?</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-preg" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-preg" value="Yes"> Yes</label>
+        <label class="radio-option"><input type="radio" name="q-preg" value="N/A"> N/A</label>
+      </div>
+    </div>
+
+    <!-- Q8: Blood thinners -->
+    <div class="field-group">
+      <label>Are you currently taking blood thinners or anticoagulant medications?</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="q-thinners" value="No"> No</label>
+        <label class="radio-option"><input type="radio" name="q-thinners" value="Yes"> Yes</label>
+      </div>
+    </div>
+
+    <!-- Q9: Medical conditions -->
+    <div class="field-group">
+      <label>Do you have any of the following? (Check all that apply)</label>
+      <div class="check-group" style="margin-top:8px;">
+        <label class="check-option"><input type="checkbox" name="q-med" value="Diabetes"> Diabetes</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="Immune disorder"> Immune disorder</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="Autoimmune condition"> Autoimmune condition</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="History of skin cancer"> History of skin cancer</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="Vitiligo"> Vitiligo</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="Eczema/Psoriasis"> Eczema / Psoriasis</label>
+        <label class="check-option"><input type="checkbox" name="q-med" value="None of the above"> None of the above</label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label>Additional health notes (optional)</label>
+      <textarea id="f-health-notes" placeholder="Any other health information you'd like us to know, including current medications..."></textarea>
+    </div>
+
+    <!-- INITIALS -->
+    <div class="initials-row">
+      <div class="initials-label">I confirm all health information above is truthful and accurate.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-health" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-health')">Clear</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 5: DISCLOSURES & INITIALS -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <div class="section-title">Disclosures &amp; Initials</div>
+  </div>
+  <div class="section-body">
+
+    <!-- Disclosure A -->
+    <div class="disclosure-box">
+      <strong>A &#8212; Multiple Sessions Required:</strong> I understand that laser tattoo removal is a <strong>multi-session process</strong>. The number of sessions required varies depending on ink colors, ink density, tattoo age, skin type, and individual response to treatment. A typical treatment plan may require <strong>6 to 15 or more sessions</strong> spaced 6&#8211;8 weeks apart. No guarantee is made regarding the number of sessions needed.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure A.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-a" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-a')">Clear</button>
+      </div>
+    </div>
+
+    <!-- Disclosure B -->
+    <div class="disclosure-box" style="margin-top:14px;">
+      <strong>B &#8212; Incomplete Removal Possible:</strong> I understand that <strong>complete removal of a tattoo cannot be guaranteed</strong>. Some tattoos, particularly those with certain ink colors (e.g., green, yellow, white), may only partially fade. Residual shadowing, ghosting, or permanent color changes may remain after treatment is complete.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure B.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-b" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-b')">Clear</button>
+      </div>
+    </div>
+
+    <!-- Disclosure C -->
+    <div class="disclosure-box" style="margin-top:14px;">
+      <strong>C &#8212; Side Effects &amp; Risks:</strong> I understand that laser tattoo removal may cause side effects including but not limited to: <strong>redness, swelling, blistering, scabbing, temporary or permanent hypopigmentation (lightening of skin), hyperpigmentation (darkening of skin), and scarring</strong>. These risks are higher in individuals with darker skin tones (Fitzpatrick Types IV&#8211;VI). I have been informed of these risks and voluntarily consent to proceed.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure C.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-c" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-c')">Clear</button>
+      </div>
+    </div>
+
+    <!-- Disclosure D -->
+    <div class="disclosure-box" style="margin-top:14px;">
+      <strong>D &#8212; Sun Avoidance &amp; Aftercare:</strong> I understand that I must <strong>avoid direct sun exposure and tanning beds</strong> for a minimum of 4 weeks before and after each treatment session. I agree to apply SPF 30+ sunscreen to the treated area when exposed to sunlight. I have received or will receive written aftercare instructions and accept full responsibility for following them. Laser Tattoo Solutions is not liable for complications arising from failure to follow aftercare guidance.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure D.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-d" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-d')">Clear</button>
+      </div>
+    </div>
+
+    <!-- Disclosure E -->
+    <div class="disclosure-box" style="margin-top:14px;">
+      <strong>E &#8212; No Guarantee of Results:</strong> I understand that Laser Tattoo Solutions makes <strong>no guarantee of any specific outcome</strong>, including complete removal, a specific number of sessions, or a specific degree of fading. Results vary by individual. The technician reserves the right to refuse or discontinue treatment at any time if it is deemed unsafe or not in the client's best interest.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure E.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-e" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-e')">Clear</button>
+      </div>
+    </div>
+
+    <!-- Disclosure F -->
+    <div class="disclosure-box" style="margin-top:14px;">
+      <strong>F &#8212; Record Keeping:</strong> I consent to Laser Tattoo Solutions retaining a permanent record of this procedure, including my name, date of birth, address, treatment date, technician name, treatment area, session number, and health assessment responses. Records are maintained for a minimum of two (2) years and are kept confidential.
+    </div>
+    <div class="initials-row">
+      <div class="initials-label">I have read and understood Disclosure F.</div>
+      <div class="initials-canvas-wrap">
+        <canvas class="initials-canvas" id="init-f" width="90" height="44"></canvas>
+        <button class="clear-btn-small" onclick="clearCanvas('init-f')">Clear</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SECTION 6: FULL CONSENT & SIGNATURE -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <div class="section-title">Full Consent &amp; Signature</div>
+  </div>
+  <div class="section-body">
+    <div class="disclosure-box">
+      By signing below, I, the undersigned, hereby voluntarily consent to receive laser tattoo removal treatment from Laser Tattoo Solutions. I affirm that:
+      <br><br>
+      (1) I am <strong>18 years of age or older</strong>;
+      <br>(2) All information provided on this form is <strong>truthful and accurate</strong>;
+      <br>(3) I have read, understood, and initialed all disclosures above;
+      <br>(4) I release Laser Tattoo Solutions and its technicians from liability for any complications arising from pre-existing medical conditions I failed to disclose;
+      <br>(5) I understand the risks associated with laser tattoo removal, including but not limited to blistering, scarring, hypopigmentation, and hyperpigmentation;
+      <br>(6) This consent form was completed <strong>voluntarily and without coercion</strong>.
+      <br><br>
+      For questions or concerns, contact Laser Tattoo Solutions at <strong>(626) 391-5520</strong> or <a href="mailto:laser.tattoo.solutions@gmail.com" style="color:#c8a84b;">laser.tattoo.solutions@gmail.com</a>.
+    </div>
+
+    <div class="field-row" style="margin-top:14px;">
+      <div class="field-group" id="fg-sig-name">
+        <label>Print Full Name <span class="req">*</span></label>
+        <input type="text" id="f-sig-name" placeholder="Full legal name">
+        <div class="field-error">Required</div>
+      </div>
+      <div class="field-group" id="fg-sig-date">
+        <label>Date Signed <span class="req">*</span></label>
+        <input type="date" id="f-sig-date">
+        <div class="field-error">Required</div>
+      </div>
+    </div>
+
+    <div class="field-group" style="margin-top:8px;">
+      <label>Signature <span class="req">*</span></label>
+      <div class="sig-wrap">
+        <canvas id="sig-canvas" height="130"></canvas>
+        <div class="sig-controls">
+          <button class="btn-outline" onclick="clearCanvas('sig-canvas')">Clear Signature</button>
+        </div>
+      </div>
+      <div class="field-error" id="sig-error" style="display:none;">Please sign above.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ SUBMIT -->
+<div id="progress-wrap">
+  <div id="progress-bar-outer"><div id="progress-bar-inner"></div></div>
+  <div id="progress-label">Generating your form image...</div>
+</div>
+<div class="submit-area">
+  <button id="submit-btn" onclick="handleSubmit()">Submit Consent Form</button>
+  <div class="submit-note">
+    Tapping Submit saves your completed form and sends it directly to Laser Tattoo Solutions.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ MODAL -->
+<div id="modal-overlay">
+  <div id="modal-box">
+    <h2 id="modal-title">Form Submitted!</h2>
+    <p id="modal-body" style="font-size:13px;line-height:1.7;color:#ccc;"></p>
+    <div class="modal-btn-row" style="flex-direction:column;gap:12px;">
+      <button class="modal-btn modal-btn-gray" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ HIDDEN RENDER AREA -->
+<div id="render-area"></div>
+
+<!-- ══════════════════════════════════════════════ SCRIPTS -->
+<script>
+/* ===================================================
+   GLOBALS
+=================================================== */
+let generatedImageDataURL = null;
+let idFrontDataURL = null;
+let idBackDataURL = null;
+
+/* ===================================================
+   AUTO-FILL TODAY'S DATE
+=================================================== */
+window.addEventListener('DOMContentLoaded', function() {
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementById('f-date').value = today;
+  document.getElementById('f-sig-date').value = today;
+
+  initCanvas('sig-canvas', true);
+  ['init-health','init-a','init-b','init-c','init-d','init-e','init-f'].forEach(function(id) {
+    initCanvas(id, false);
+  });
+
+  document.getElementById('f-dob').addEventListener('change', calcAge);
+
+  setupUpload('id-front-input', 'id-front-img', 'id-front-preview', function(d) { idFrontDataURL = d; });
+  setupUpload('id-back-input', 'id-back-img', 'id-back-preview', function(d) { idBackDataURL = d; });
+});
+
+/* ===================================================
+   AGE CALCULATION
+=================================================== */
+function calcAge() {
+  var dob = document.getElementById('f-dob').value;
+  if (!dob) return;
+  var today = new Date();
+  var birth = new Date(dob);
+  var age = today.getFullYear() - birth.getFullYear();
+  var m = today.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+  document.getElementById('f-age').value = age + ' years old';
+  return age;
+}
+
+/* ===================================================
+   CANVAS DRAWING
+=================================================== */
+function initCanvas(id, isSignature) {
+  var canvas = document.getElementById(id);
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+
+  if (isSignature) {
+    var w = canvas.parentElement.offsetWidth || 340;
+    canvas.width = Math.min(w, 500);
+    canvas.height = 130;
+  }
+
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#bbb';
+  ctx.font = isSignature ? '13px Arial' : '10px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText(isSignature ? 'Sign here' : 'Initials', canvas.width / 2, canvas.height / 2 + 4);
+
+  var drawing = false;
+  var lastX = 0, lastY = 0;
+
+  function getPos(e) {
+    var rect = canvas.getBoundingClientRect();
+    var scaleX = canvas.width / rect.width;
+    var scaleY = canvas.height / rect.height;
+    if (e.touches) {
+      return {
+        x: (e.touches[0].clientX - rect.left) * scaleX,
+        y: (e.touches[0].clientY - rect.top) * scaleY
+      };
+    }
+    return {
+      x: (e.clientX - rect.left) * scaleX,
+      y: (e.clientY - rect.top) * scaleY
+    };
+  }
+
+  function startDraw(e) {
+    e.preventDefault();
+    drawing = true;
+    var pos = getPos(e);
+    lastX = pos.x; lastY = pos.y;
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.arc(lastX, lastY, 1, 0, Math.PI * 2);
+    ctx.fillStyle = '#000';
+    ctx.fill();
+  }
+
+  function draw(e) {
+    if (!drawing) return;
+    e.preventDefault();
+    var pos = getPos(e);
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = isSignature ? 2.5 : 2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+    lastX = pos.x; lastY = pos.y;
+  }
+
+  function stopDraw() { drawing = false; }
+
+  canvas.addEventListener('mousedown', startDraw);
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', stopDraw);
+  canvas.addEventListener('mouseleave', stopDraw);
+  canvas.addEventListener('touchstart', startDraw, { passive: false });
+  canvas.addEventListener('touchmove', draw, { passive: false });
+  canvas.addEventListener('touchend', stopDraw);
+}
+
+function clearCanvas(id) {
+  var canvas = document.getElementById(id);
+  var ctx = canvas.getContext('2d');
+  var isSignature = id === 'sig-canvas';
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#bbb';
+  ctx.font = isSignature ? '13px Arial' : '10px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText(isSignature ? 'Sign here' : 'Initials', canvas.width / 2, canvas.height / 2 + 4);
+}
+
+function isCanvasBlank(id) {
+  var canvas = document.getElementById(id);
+  var ctx = canvas.getContext('2d');
+  var data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+  for (var i = 0; i < data.length; i += 4) {
+    if (data[i] < 240 || data[i+1] < 240 || data[i+2] < 240) return false;
+  }
+  return true;
+}
+
+/* ===================================================
+   ID UPLOAD HANDLER
+=================================================== */
+function setupUpload(inputId, imgId, previewId, callback) {
+  var input = document.getElementById(inputId);
+  var img = document.getElementById(imgId);
+  var preview = document.getElementById(previewId);
+  if (!input) return;
+  input.addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      var tempImg = new Image();
+      tempImg.onload = function() {
+        var MAX_DIM = 1200;
+        var w = tempImg.width, h = tempImg.height;
+        if (w > MAX_DIM || h > MAX_DIM) {
+          if (w > h) { h = Math.round(h * MAX_DIM / w); w = MAX_DIM; }
+          else { w = Math.round(w * MAX_DIM / h); h = MAX_DIM; }
+        }
+        var offscreen = document.createElement('canvas');
+        offscreen.width = w; offscreen.height = h;
+        offscreen.getContext('2d').drawImage(tempImg, 0, 0, w, h);
+        var compressed = offscreen.toDataURL('image/jpeg', 0.75);
+        img.src = compressed;
+        preview.style.display = 'block';
+        callback(compressed);
+      };
+      tempImg.onerror = function() {
+        img.src = ev.target.result;
+        preview.style.display = 'block';
+        callback(ev.target.result);
+      };
+      tempImg.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+/* ===================================================
+   VALIDATION
+=================================================== */
+function validate() {
+  var valid = true;
+
+  var required = [
+    { id: 'f-first', fg: 'fg-first' },
+    { id: 'f-last', fg: 'fg-last' },
+    { id: 'f-dob', fg: 'fg-dob' },
+    { id: 'f-address', fg: 'fg-address' },
+    { id: 'f-city', fg: 'fg-city' },
+    { id: 'f-phone', fg: 'fg-phone' },
+    { id: 'f-tech', fg: 'fg-tech' },
+    { id: 'f-date', fg: 'fg-date' },
+    { id: 'f-placement', fg: 'fg-placement' },
+    { id: 'f-sig-name', fg: 'fg-sig-name' },
+    { id: 'f-sig-date', fg: 'fg-sig-date' },
+  ];
+
+  required.forEach(function(item) {
+    var el = document.getElementById(item.id);
+    var fg_el = document.getElementById(item.fg);
+    if (!el.value.trim()) {
+      fg_el.classList.add('has-error');
+      valid = false;
+    } else {
+      fg_el.classList.remove('has-error');
+    }
+  });
+
+  // Skin type select
+  var skinType = document.getElementById('f-skin-type').value;
+  var skinTypeGroup = document.getElementById('fg-skin-type');
+  if (!skinType) {
+    skinTypeGroup.classList.add('has-error');
+    valid = false;
+  } else {
+    skinTypeGroup.classList.remove('has-error');
+  }
+
+  // ID upload
+  if (!idFrontDataURL) {
+    document.getElementById('id-error').style.display = 'block';
+    valid = false;
+  } else {
+    document.getElementById('id-error').style.display = 'none';
+  }
+
+  // Signature
+  if (isCanvasBlank('sig-canvas')) {
+    document.getElementById('sig-error').style.display = 'block';
+    valid = false;
+  } else {
+    document.getElementById('sig-error').style.display = 'none';
+  }
+
+  // Required health radios
+  ['q-sun', 'q-keloid', 'q-photomed', 'q-infection'].forEach(function(name) {
+    var checked = document.querySelector('input[name="' + name + '"]:checked');
+    if (!checked) valid = false;
+  });
+
+  if (!valid) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(function() {
+      var firstError = document.querySelector('.has-error, #id-error[style*="block"], #sig-error[style*="block"]');
+      if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 300);
+  }
+
+  return valid;
+}
+
+/* ===================================================
+   BUILD JPEG
+=================================================== */
+async function buildJPEG() {
+  var first       = document.getElementById('f-first').value.trim();
+  var last        = document.getElementById('f-last').value.trim();
+  var dob         = document.getElementById('f-dob').value;
+  var age         = document.getElementById('f-age').value;
+  var address     = document.getElementById('f-address').value.trim();
+  var city        = document.getElementById('f-city').value.trim();
+  var state       = document.getElementById('f-state').value.trim();
+  var zip         = document.getElementById('f-zip').value.trim();
+  var phone       = document.getElementById('f-phone').value.trim();
+  var email       = document.getElementById('f-email').value.trim();
+  var tech        = document.getElementById('f-tech').value.trim();
+  var procDate    = document.getElementById('f-date').value;
+  var placement   = document.getElementById('f-placement').value.trim();
+  var session     = document.getElementById('f-session').value.trim();
+  var estSessions = document.getElementById('f-est-sessions').value.trim();
+  var inkColors   = document.getElementById('f-ink-colors').value.trim();
+  var price       = document.getElementById('f-price').value.trim();
+  var sigName     = document.getElementById('f-sig-name').value.trim();
+  var sigDate     = document.getElementById('f-sig-date').value;
+  var healthNotes = document.getElementById('f-health-notes').value.trim();
+  var skinType    = document.getElementById('f-skin-type').value;
+
+  var q_sun      = (document.querySelector('input[name="q-sun"]:checked') || {}).value || '--';
+  var q_keloid   = (document.querySelector('input[name="q-keloid"]:checked') || {}).value || '--';
+  var q_photomed = (document.querySelector('input[name="q-photomed"]:checked') || {}).value || '--';
+  var q_infection= (document.querySelector('input[name="q-infection"]:checked') || {}).value || '--';
+  var q_coldsore = (document.querySelector('input[name="q-coldsore"]:checked') || {}).value || '--';
+  var q_preg     = (document.querySelector('input[name="q-preg"]:checked') || {}).value || '--';
+  var q_thinners = (document.querySelector('input[name="q-thinners"]:checked') || {}).value || '--';
+  var medArr = Array.from(document.querySelectorAll('input[name="q-med"]:checked')).map(function(c) { return c.value; });
+  var medConditions = medArr.length ? medArr.join(', ') : 'None';
+
+  var initCanvases = {
+    health: document.getElementById('init-health'),
+    a: document.getElementById('init-a'),
+    b: document.getElementById('init-b'),
+    c: document.getElementById('init-c'),
+    d: document.getElementById('init-d'),
+    e: document.getElementById('init-e'),
+    f: document.getElementById('init-f'),
+  };
+  var sigCanvas = document.getElementById('sig-canvas');
+
+  var W = 900;
+  var canvas = document.createElement('canvas');
+  var ctx = canvas.getContext('2d');
+  var Y = 0;
+  var PADDING = 30;
+  var LINE = 22;
+  var SECTION_GAP = 18;
+
+  var estimatedHeight = 3600 + (idFrontDataURL ? 280 : 0) + (idBackDataURL ? 280 : 0);
+  canvas.width = W;
+  canvas.height = estimatedHeight;
+
+  ctx.fillStyle = '#0d0d0d';
+  ctx.fillRect(0, 0, W, canvas.height);
+
+  function drawRect(x, y, w, h, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, w, h);
+  }
+
+  function drawText(text, x, y, size, color, bold, align) {
+    ctx.font = (bold ? '700' : '400') + ' ' + size + 'px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = color;
+    ctx.textAlign = align || 'left';
+    ctx.fillText(text, x, y);
+  }
+
+  function wrapText(text, x, y, maxW, lineH, size, color) {
+    ctx.font = '400 ' + size + 'px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = color;
+    ctx.textAlign = 'left';
+    var words = text.split(' ');
+    var line = '';
+    var curY = y;
+    words.forEach(function(word) {
+      var test = line + word + ' ';
+      if (ctx.measureText(test).width > maxW && line !== '') {
+        ctx.fillText(line, x, curY);
+        line = word + ' ';
+        curY += lineH;
+      } else {
+        line = test;
+      }
+    });
+    ctx.fillText(line, x, curY);
+    return curY + lineH;
+  }
+
+  function drawSectionHeader(title, num) {
+    drawRect(0, Y, W, 44, '#222222');
+    drawRect(0, Y + 42, W, 3, '#c8a84b');
+    ctx.beginPath();
+    ctx.arc(PADDING + 11, Y + 22, 11, 0, Math.PI * 2);
+    ctx.fillStyle = '#c8a84b';
+    ctx.fill();
+    drawText(String(num), PADDING + 11, Y + 27, 11, '#000', true, 'center');
+    drawText(title.toUpperCase(), PADDING + 30, Y + 27, 13, '#e0e0e0', true);
+    Y += 44 + 3 + 16;
+  }
+
+  function drawField(label, value) {
+    drawText(label.toUpperCase(), PADDING, Y, 10, '#c8a84b', true);
+    Y += 14;
+    drawRect(PADDING, Y, W - PADDING * 2, 1, '#2a2a2a');
+    Y += 6;
+    drawText(value || '--', PADDING, Y, 14, '#f0f0f0', false);
+    Y += LINE + 4;
+  }
+
+  function drawFieldRow(fields) {
+    var colW = (W - PADDING * 2 - (fields.length - 1) * 10) / fields.length;
+    var startY = Y;
+    var maxH = 0;
+    fields.forEach(function(f, i) {
+      var x = PADDING + i * (colW + 10);
+      ctx.font = '700 10px Helvetica Neue, Arial, sans-serif';
+      ctx.fillStyle = '#c8a84b';
+      ctx.textAlign = 'left';
+      ctx.fillText(f.label.toUpperCase(), x, startY);
+      ctx.fillStyle = '#2a2a2a';
+      ctx.fillRect(x, startY + 14, colW, 1);
+      ctx.font = '400 14px Helvetica Neue, Arial, sans-serif';
+      ctx.fillStyle = '#f0f0f0';
+      ctx.fillText(f.value || '--', x, startY + 26);
+      maxH = Math.max(maxH, 40);
+    });
+    Y = startY + maxH;
+  }
+
+  function drawDisclosure(letter, text) {
+    drawRect(PADDING, Y, W - PADDING * 2, 3, '#c8a84b');
+    Y += 8;
+    drawRect(PADDING, Y, W - PADDING * 2, 1, '#2a2a2a');
+    Y += 8;
+    ctx.font = '700 11px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = '#e8c85a';
+    ctx.textAlign = 'left';
+    ctx.fillText('DISCLOSURE ' + letter, PADDING, Y);
+    Y += 16;
+    Y = wrapText(text, PADDING, Y, W - PADDING * 2 - 10, 18, 11, '#cccccc');
+    Y += 6;
+  }
+
+  function drawInitialsRow(label, canvasEl) {
+    var rowH = 60;
+    drawRect(PADDING, Y, W - PADDING * 2, rowH, '#111111');
+    ctx.font = '400 11px Helvetica Neue, Arial, sans-serif';
+    ctx.fillStyle = '#888';
+    ctx.textAlign = 'left';
+    wrapText(label, PADDING + 10, Y + 20, W - PADDING * 2 - 120, 15, 11, '#888');
+    var initX = W - PADDING - 100;
+    ctx.drawImage(canvasEl, initX, Y + 8, 90, 44);
+    ctx.strokeStyle = '#333';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(initX, Y + 8, 90, 44);
+    Y += rowH + 8;
+  }
+
+  function drawImageSection(label, dataURL) {
+    if (!dataURL) return Promise.resolve();
+    return new Promise(function(resolve) {
+      var img = new Image();
+      img.onload = function() {
+        try {
+          var maxW = W - PADDING * 2;
+          var ratio = img.height / img.width;
+          var drawW = Math.min(maxW, 400);
+          var drawH = drawW * ratio;
+          drawText(label.toUpperCase(), PADDING, Y, 10, '#c8a84b', true);
+          Y += 14;
+          ctx.drawImage(img, PADDING, Y, drawW, drawH);
+          ctx.strokeStyle = '#c8a84b';
+          ctx.lineWidth = 2;
+          ctx.strokeRect(PADDING, Y, drawW, drawH);
+          Y += drawH + 16;
+        } catch(e) { console.warn('Image draw error:', e); }
+        resolve();
+      };
+      img.onerror = function() { resolve(); };
+      setTimeout(resolve, 8000);
+      img.src = dataURL;
+    });
+  }
+
+  // HEADER
+  drawRect(0, 0, W, 80, '#111111');
+  drawRect(0, 78, W, 3, '#c8a84b');
+  drawText('LASER TATTOO SOLUTIONS', W / 2, 38, 26, '#c8a84b', true, 'center');
+  drawText('LASER TATTOO REMOVAL CONSENT FORM', W / 2, 62, 12, '#888888', false, 'center');
+  Y = 100;
+
+  // SECTION 1
+  drawSectionHeader('Client Information', 1);
+  drawFieldRow([{ label: 'First Name', value: first }, { label: 'Last Name', value: last }]);
+  Y += 8;
+  drawFieldRow([{ label: 'Date of Birth', value: dob }, { label: 'Age', value: age }]);
+  Y += 8;
+  drawField('Street Address', address);
+  drawFieldRow([{ label: 'City', value: city }, { label: 'State', value: state }, { label: 'ZIP', value: zip }]);
+  Y += 8;
+  drawFieldRow([{ label: 'Phone', value: phone }, { label: 'Email', value: email || 'Not provided' }]);
+  Y += SECTION_GAP;
+
+  // SECTION 2
+  drawSectionHeader('Technician & Procedure Details', 2);
+  drawField('Technician', tech);
+  drawFieldRow([{ label: 'Date of Treatment', value: procDate }, { label: 'Treatment Area', value: placement }]);
+  Y += 8;
+  drawFieldRow([
+    { label: 'Session Number', value: session || 'N/A' },
+    { label: 'Est. Total Sessions', value: estSessions || 'N/A' },
+    { label: 'Quoted Price', value: price || 'N/A' }
+  ]);
+  Y += 8;
+  drawField('Ink Colors Being Treated', inkColors || 'Not specified');
+  Y += SECTION_GAP;
+
+  // SECTION 3
+  drawSectionHeader('Government-Issued Photo ID', 3);
+  await drawImageSection('Front of ID', idFrontDataURL);
+  await drawImageSection('Back of ID', idBackDataURL);
+  Y += SECTION_GAP;
+
+  // SECTION 4
+  drawSectionHeader('Health Assessment', 4);
+  drawField('Fitzpatrick Skin Type', skinType || '--');
+  drawFieldRow([{ label: 'Recent sun/tanning exposure?', value: q_sun }, { label: 'History of keloid scarring?', value: q_keloid }]);
+  Y += 8;
+  drawFieldRow([{ label: 'Photosensitive medications?', value: q_photomed }, { label: 'Active infection in area?', value: q_infection }]);
+  Y += 8;
+  drawFieldRow([{ label: 'History of cold sores?', value: q_coldsore }, { label: 'Pregnant/Breastfeeding?', value: q_preg }]);
+  Y += 8;
+  drawFieldRow([{ label: 'Blood thinners?', value: q_thinners }, { label: 'Medical conditions', value: medConditions }]);
+  Y += 8;
+  if (healthNotes) {
+    drawText('ADDITIONAL HEALTH NOTES', PADDING, Y, 10, '#c8a84b', true);
+    Y += 14;
+    Y = wrapText(healthNotes, PADDING, Y, W - PADDING * 2, 18, 12, '#ccc');
+  }
+  Y += 8;
+  drawInitialsRow('I confirm all health information above is truthful and accurate.', initCanvases.health);
+  Y += SECTION_GAP;
+
+  // SECTION 5
+  drawSectionHeader('Disclosures & Initials', 5);
+  drawDisclosure('A - Multiple Sessions Required', 'I understand that laser tattoo removal is a multi-session process. The number of sessions required varies depending on ink colors, ink density, tattoo age, skin type, and individual response to treatment. A typical treatment plan may require 6 to 15 or more sessions spaced 6-8 weeks apart. No guarantee is made regarding the number of sessions needed.');
+  drawInitialsRow('I have read and understood Disclosure A - Multiple Sessions Required.', initCanvases.a);
+
+  drawDisclosure('B - Incomplete Removal Possible', 'I understand that complete removal of a tattoo cannot be guaranteed. Some tattoos, particularly those with certain ink colors (e.g., green, yellow, white), may only partially fade. Residual shadowing, ghosting, or permanent color changes may remain after treatment is complete.');
+  drawInitialsRow('I have read and understood Disclosure B - Incomplete Removal Possible.', initCanvases.b);
+
+  drawDisclosure('C - Side Effects & Risks', 'I understand that laser tattoo removal may cause side effects including but not limited to: redness, swelling, blistering, scabbing, temporary or permanent hypopigmentation (lightening of skin), hyperpigmentation (darkening of skin), and scarring. These risks are higher in individuals with darker skin tones (Fitzpatrick Types IV-VI). I have been informed of these risks and voluntarily consent to proceed.');
+  drawInitialsRow('I have read and understood Disclosure C - Side Effects & Risks.', initCanvases.c);
+
+  drawDisclosure('D - Sun Avoidance & Aftercare', 'I understand that I must avoid direct sun exposure and tanning beds for a minimum of 4 weeks before and after each treatment session. I agree to apply SPF 30+ sunscreen to the treated area when exposed to sunlight. I have received or will receive written aftercare instructions and accept full responsibility for following them. Laser Tattoo Solutions is not liable for complications arising from failure to follow aftercare guidance.');
+  drawInitialsRow('I have read and understood Disclosure D - Sun Avoidance & Aftercare.', initCanvases.d);
+
+  drawDisclosure('E - No Guarantee of Results', 'I understand that Laser Tattoo Solutions makes no guarantee of any specific outcome, including complete removal, a specific number of sessions, or a specific degree of fading. Results vary by individual. The technician reserves the right to refuse or discontinue treatment at any time if it is deemed unsafe or not in the client\'s best interest.');
+  drawInitialsRow('I have read and understood Disclosure E - No Guarantee of Results.', initCanvases.e);
+
+  drawDisclosure('F - Record Keeping', 'I consent to Laser Tattoo Solutions retaining a permanent record of this procedure, including my name, date of birth, address, treatment date, technician name, treatment area, session number, and health assessment responses. Records are maintained for a minimum of two (2) years and are kept confidential.');
+  drawInitialsRow('I have read and understood Disclosure F - Record Keeping.', initCanvases.f);
+  Y += SECTION_GAP;
+
+  // SECTION 6
+  drawSectionHeader('Full Consent & Signature', 6);
+  var consentText = 'By signing below, I voluntarily consent to receive laser tattoo removal treatment from Laser Tattoo Solutions. I affirm that: (1) I am 18 years of age or older; (2) All information provided is truthful and accurate; (3) I have read, understood, and initialed all disclosures; (4) I release Laser Tattoo Solutions and its technicians from liability for complications arising from pre-existing medical conditions I failed to disclose; (5) I understand the risks associated with laser tattoo removal, including blistering, scarring, hypopigmentation, and hyperpigmentation; (6) This consent was completed voluntarily and without coercion. Contact: (626) 391-5520 | laser.tattoo.solutions@gmail.com';
+  Y = wrapText(consentText, PADDING, Y, W - PADDING * 2, 18, 11, '#cccccc');
+  Y += 14;
+
+  drawFieldRow([{ label: 'Printed Full Name', value: sigName }, { label: 'Date Signed', value: sigDate }]);
+  Y += 16;
+
+  drawText('SIGNATURE', PADDING, Y, 10, '#c8a84b', true);
+  Y += 10;
+  var sigW = Math.min(W - PADDING * 2, 500);
+  var sigH = 130;
+  ctx.drawImage(sigCanvas, PADDING, Y, sigW, sigH);
+  ctx.strokeStyle = '#333';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(PADDING, Y, sigW, sigH);
+  Y += sigH + 20;
+
+  // FOOTER
+  drawRect(0, Y, W, 50, '#111111');
+  drawRect(0, Y, W, 2, '#c8a84b');
+  drawText('Laser Tattoo Solutions  |  (626) 391-5520  |  laser.tattoo.solutions@gmail.com', W / 2, Y + 22, 10, '#666', false, 'center');
+  var ts = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+  drawText('Form completed: ' + ts, W / 2, Y + 38, 9, '#444', false, 'center');
+  Y += 60;
+
+  var finalCanvas = document.createElement('canvas');
+  finalCanvas.width = W;
+  finalCanvas.height = Y;
+  finalCanvas.getContext('2d').drawImage(canvas, 0, 0);
+  return finalCanvas.toDataURL('image/jpeg', 0.92);
+}
+
+/* ===================================================
+   SUBMIT HANDLER
+=================================================== */
+async function handleSubmit() {
+  if (!validate()) return;
+
+  var btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Generating...';
+
+  var progressWrap = document.getElementById('progress-wrap');
+  var progressBar = document.getElementById('progress-bar-inner');
+  var progressLabel = document.getElementById('progress-label');
+  progressWrap.style.display = 'block';
+
+  var prog = 0;
+  var progInterval = setInterval(function() {
+    prog = Math.min(prog + 2, 90);
+    progressBar.style.width = prog + '%';
+  }, 60);
+
+  try {
+    generatedImageDataURL = await buildJPEG();
+    clearInterval(progInterval);
+    progressBar.style.width = '100%';
+    progressLabel.textContent = 'Form ready!';
+
+    var firstName   = document.getElementById('f-first').value.trim();
+    var lastName    = document.getElementById('f-last').value.trim();
+    var phone       = document.getElementById('f-phone').value.trim();
+    var tech        = document.getElementById('f-tech').value.trim();
+    var procDate    = document.getElementById('f-date').value;
+    var placement   = document.getElementById('f-placement').value.trim();
+    var session     = document.getElementById('f-session').value.trim();
+    var inkColors   = document.getElementById('f-ink-colors').value.trim();
+    var price       = document.getElementById('f-price').value.trim();
+    var fullName    = firstName + ' ' + lastName;
+
+    progressLabel.textContent = 'Sending to Laser Tattoo Solutions...';
+
+    var payload = {
+      clientName:    fullName,
+      clientPhone:   phone,
+      clientEmail:   document.getElementById('f-email').value.trim(),
+      techName:      tech,
+      procedureDate: procDate,
+      placement:     placement,
+      session:       session || 'N/A',
+      inkColors:     inkColors || 'Not specified',
+      price:         price || 'N/A',
+      jpegDataUrl:      generatedImageDataURL,
+      idFrontDataUrl:   idFrontDataURL || null,
+      idBackDataUrl:    idBackDataURL  || null
+    };
+
+    var response = await fetch('/laser-submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      var err = await response.json().catch(function() { return {}; });
+      throw new Error(err.error || 'Server error ' + response.status);
+    }
+
+    progressBar.style.width = '100%';
+    progressLabel.textContent = 'Submitted!';
+
+    document.getElementById('modal-title').textContent = '\u2705 Form Submitted!';
+    document.getElementById('modal-body').innerHTML =
+      'Your consent form has been <strong style="color:#c8a84b;">sent directly to Laser Tattoo Solutions</strong>.<br><br>You\'re all set! No further action needed.';
+
+    setTimeout(function() {
+      progressWrap.style.display = 'none';
+      btn.disabled = false;
+      btn.textContent = 'Submit Consent Form';
+      showModal();
+    }, 600);
+
+  } catch(err) {
+    clearInterval(progInterval);
+    progressWrap.style.display = 'none';
+    btn.disabled = false;
+    btn.textContent = 'Submit Consent Form';
+    alert('Error generating form: ' + err.message + '\n\nPlease try again.');
+    console.error(err);
+  }
+}
+
+/* ===================================================
+   MODAL
+=================================================== */
+function showModal() {
+  document.getElementById('modal-overlay').classList.add('active');
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+}
+</script>
+</body>
+</html>
