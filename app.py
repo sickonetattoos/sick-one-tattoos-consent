@@ -14,6 +14,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app, origins="*")
+app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50 MB max
 
 RECIPIENT_EMAIL = "laser.tattoo.solutions@gmail.com"
 SENDER_EMAIL    = "laser.tattoo.solutions@gmail.com"
@@ -126,9 +127,10 @@ def submit():
                         f"ID_Back_{safe_name}_{date_str}.jpg")
 
         # ── Send via Gmail SMTP ──────────────────────────────
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as srv:
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as srv:
             srv.ehlo()
             srv.starttls()
+            srv.ehlo()
             srv.login(SENDER_EMAIL, SENDER_PASSWORD)
             srv.sendmail(SENDER_EMAIL, RECIPIENT_EMAIL, msg.as_string())
 

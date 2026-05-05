@@ -1066,9 +1066,30 @@ function setupUpload(inputId, imgId, previewId, callback) {
     if (!file) return;
     const reader = new FileReader();
     reader.onload = (ev) => {
-      img.src = ev.target.result;
-      preview.style.display = 'block';
-      callback(ev.target.result);
+      // Compress the image before storing to prevent large payload issues
+      const tempImg = new Image();
+      tempImg.onload = () => {
+        const MAX_DIM = 1200; // max width or height in pixels
+        let w = tempImg.width, h = tempImg.height;
+        if (w > MAX_DIM || h > MAX_DIM) {
+          if (w > h) { h = Math.round(h * MAX_DIM / w); w = MAX_DIM; }
+          else { w = Math.round(w * MAX_DIM / h); h = MAX_DIM; }
+        }
+        const offscreen = document.createElement('canvas');
+        offscreen.width = w; offscreen.height = h;
+        offscreen.getContext('2d').drawImage(tempImg, 0, 0, w, h);
+        const compressed = offscreen.toDataURL('image/jpeg', 0.75);
+        img.src = compressed;
+        preview.style.display = 'block';
+        callback(compressed);
+      };
+      tempImg.onerror = () => {
+        // Fallback: use original if compression fails
+        img.src = ev.target.result;
+        preview.style.display = 'block';
+        callback(ev.target.result);
+      };
+      tempImg.src = ev.target.result;
     };
     reader.readAsDataURL(file);
   });
@@ -1318,23 +1339,31 @@ async function buildJPEG() {
   }
 
   function drawImageSection(label, dataURL) {
-    if (!dataURL) return;
+    if (!dataURL) return Promise.resolve();
     return new Promise((resolve) => {
       const img = new Image();
       img.onload = () => {
-        const maxW = W - PADDING * 2;
-        const ratio = img.height / img.width;
-        const drawW = Math.min(maxW, 400);
-        const drawH = drawW * ratio;
-        drawText(label.toUpperCase(), PADDING, Y, 10, '#c8a84b', true);
-        Y += 14;
-        ctx.drawImage(img, PADDING, Y, drawW, drawH);
-        ctx.strokeStyle = '#c8a84b';
-        ctx.lineWidth = 2;
-        ctx.strokeRect(PADDING, Y, drawW, drawH);
-        Y += drawH + 16;
+        try {
+          const maxW = W - PADDING * 2;
+          const ratio = img.height / img.width;
+          const drawW = Math.min(maxW, 400);
+          const drawH = drawW * ratio;
+          drawText(label.toUpperCase(), PADDING, Y, 10, '#c8a84b', true);
+          Y += 14;
+          ctx.drawImage(img, PADDING, Y, drawW, drawH);
+          ctx.strokeStyle = '#c8a84b';
+          ctx.lineWidth = 2;
+          ctx.strokeRect(PADDING, Y, drawW, drawH);
+          Y += drawH + 16;
+        } catch(e) { console.warn('Image draw error:', e); }
         resolve();
       };
+      img.onerror = () => {
+        console.warn('Image load failed for:', label);
+        resolve(); // Don't hang — just skip the image
+      };
+      // Set a timeout fallback in case neither onload nor onerror fires
+      setTimeout(resolve, 8000);
       img.src = dataURL;
     });
   }
