@@ -1206,21 +1206,21 @@ async function buildJPEG() {
   const sigCanvas = document.getElementById('sig-canvas');
 
   // ── Build a tall canvas ──
-  const W = 900;
+  const W = 720;
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
 
   // We'll draw section by section and track Y position
   let Y = 0;
-  const PADDING = 30;
-  const LINE = 22;
-  const SECTION_GAP = 18;
+  const PADDING = 24;
+  const LINE = 20;
+  const SECTION_GAP = 16;
 
   // Helper: measure text height for a block
   function sectionHeight(lines) { return lines * LINE + 40; }
 
   // Pre-calculate total height (rough)
-  const estimatedHeight = 3200 + (idFrontDataURL ? 280 : 0) + (idBackDataURL ? 280 : 0) + (guardianIdDataURL ? 280 : 0);
+  const estimatedHeight = 2800 + (idFrontDataURL ? 220 : 0) + (idBackDataURL ? 220 : 0) + (guardianIdDataURL ? 220 : 0);
   canvas.width = W;
   canvas.height = estimatedHeight;
 
@@ -1515,7 +1515,7 @@ async function buildJPEG() {
   const finalCtx = finalCanvas.getContext('2d');
   finalCtx.drawImage(canvas, 0, 0);
 
-  return finalCanvas.toDataURL('image/jpeg', 0.92);
+  return finalCanvas.toDataURL('image/jpeg', 0.80);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -1611,8 +1611,15 @@ async function handleSubmit() {
     progressWrap.style.display = 'none';
     btn.disabled = false;
     btn.textContent = 'Submit Consent Form';
-    alert('Error generating form: ' + err.message + '\n\nPlease try again.');
-    console.error(err);
+    console.error('Submit error:', err);
+    const msg = err.message || 'Unknown error';
+    if (msg.includes('NetworkError') || msg.includes('Failed to fetch') || msg.includes('Load failed')) {
+      alert('Network error — please check your internet connection and try again.');
+    } else if (msg.includes('Server error') || msg.includes('SendGrid')) {
+      alert('The form was built but could not be sent. Please try again in a moment.');
+    } else {
+      alert('Something went wrong: ' + msg + '\n\nPlease try again. If the problem continues, try refreshing the page.');
+    }
   }
 }
 
