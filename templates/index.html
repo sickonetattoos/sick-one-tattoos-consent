@@ -1596,7 +1596,8 @@ async function handleSubmit() {
     document.getElementById('modal-body').innerHTML =
       `Your consent form has been <strong style="color:#c8a84b;">sent directly to Sick One Tattoos</strong>.<br><br>
       You\'re all set! No further action needed.`;
-    document.getElementById('modal-action-btn').style.display = 'none';
+    var actionBtnEl = document.getElementById('modal-action-btn') || document.getElementById('modal-email-btn');
+    if (actionBtnEl) actionBtnEl.style.display = 'none';
 
     setTimeout(() => {
       progressWrap.style.display = 'none';
